@@ -27,7 +27,7 @@ library(readr)      # to read csv files
 library(ggplot2)    # to make plots
 library(kableExtra) # to style tables
 library(tinytex) #to render pdfs with Latex tinytex::install_tinytex()# This installs the full LaTeX engine needed to render pdfs per warning message
-library(pagedown)
+library(pagedown) #would not work
 
 ```
 
@@ -146,11 +146,3 @@ ggplot(dt_long, aes(x = Zone, y = Value, color = Season)) +
 
 <div style="text-align: center;">
 <span style="font-size:0.8em; color:gray;">www.hawaiianbeachrentals.com</span>
-
-```{r}
-#| message: false
-#| warning: false
-#| echo: false
-quarto render yourfile.qmd --to html
-pagedown::chrome_print("Tangalin_homework_week6.html")
-```
