@@ -1,0 +1,156 @@
+---
+title: "Tangalin_homework Week 6"
+author: "Natalia Tangalin"
+date: today 
+format:
+  html:
+    theme: superhero
+  pdf:
+    documentclass: article #need LaTeX
+knitr:                     #to suppress Rchunk warning messages            
+  opts_chunk: 
+    message: false
+    warning: false
+---
+# Introduction
+  
+Today we are learning to work with figures using chemical data from *Manualua Bay* on Oahu's south shore
+
+## R Packages We Need
+```{r}
+#| message: false #blocks messages #blocks messages
+#| warning: false #blocks warnings again
+#| echo: true    #see code
+
+library(tidyverse)  #ggplot2, dplyr
+library(readr)      # to read csv files
+library(ggplot2)    # to make plots
+library(kableExtra) # to style tables
+library(tinytex) #to render pdfs with Latex tinytex::install_tinytex()# This installs the full LaTeX engine needed to render pdfs per warning message
+library(pagedown)
+
+```
+
+### **This is a water chemistry dataset from Dr.Silbiger's Lab with:**
+
+## Chemical Measurements  
+- **Temp_in**: Temperature in situ *(°C)*  
+- **Salinity**: Salinity *(PSU)*  
+- **Phosphate**: Phosphate concentration *(µmol/L)*  
+- **Silicate**: Silicate concentration *(µmol/L)*  
+- **pH**: Acidity level
+
+<div style="text-align: center;">
+## Environmental Measurements:
+### Season  
+*Season of the year*  
+- SPRING  
+- FALL  
+
+### Tide_time  
+*Tide and time of day*  
+- Low_Day  
+
+### Zone  
+*Submarine groundwater zone*  
+- Ambient  
+- Diffuse  
+- Transition  
+- Near Spring  
+- Offshore  
+- Channel  
+
+### Site  
+*Site name*  
+- W  
+- BP  
+
+---
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false #hid code
+
+chemical <- read_csv("../Data/chemicaldata_maunalua.csv")
+## load csv not working chemical <- read_csv("Week_06/Data/chemicaldata_maunalua.csv") moves to working diretory scripts
+
+# Data filtering and cleaning
+filtered <- chemical %>% 
+  filter(Tide_time == "Low_Day",   # Keep only Low_Day rows
+         Season %in% c("SPRING", "FALL")) %>%  # Keep rows with Spring or Fall
+  select(Season, Zone, Site, Temp_in, Salinity, Phosphate, Silicate, pH) %>%  # Select these columns
+  drop_na()  # Drop any NAs
+```
+## Summary Table
+
+```{r}
+#| label: summary-table 
+#| message: false
+#| warning: false
+#| echo: false
+
+dt <- filtered %>%  #use filtered data
+group_by(Season, Zone) %>% #group by season and zone
+summarise(  # give averages for all variables below, remove NAs, round to 2 decimal places
+  Mean_Temp = round(mean(Temp_in, na.rm = TRUE), 2), 
+  Mean_Salinity = round(mean(Salinity, na.rm = TRUE), 2), 
+Mean_Phosphate = round(mean(Phosphate, na.rm = TRUE), 2), 
+Mean_Silicate = round(mean(Silicate, na.rm = TRUE), 2),
+Mean_pH = round(mean(pH, na.rm = TRUE), 2)
+)
+kbl(dt) %>% # make table
+  kable_paper("striped", full_width = FALSE) %>% # adds striping 
+ row_spec(0, angle = 20, color = "white") %>%  # header text white to see better and 20d angle 
+  row_spec(1:nrow(dt), color = "white") # body text white
+```
+
+## Plot
+
+```{r}
+#| label: fig-chem-plot #code chunk name
+#| fig-cap: "Mean Chemical Variables by Season and Zone" #caption
+#| fig-align: "center" #center on page
+#| fig-width: 10 # make 10 inches wide
+#| fig-height: 5 # 5 inches tall
+#| message: false #maybe redundant
+#| echo: false #hide code
+
+dt_long <- dt %>%
+  pivot_longer(cols = starts_with("Mean_"),
+               names_to = "Chemical_Variable",
+               values_to = "Value") %>%
+  mutate(Chemical_Variable = str_remove(Chemical_Variable, "Mean_"))
+
+ggplot(dt_long, aes(x = Zone, y = Value, color = Season)) +
+  geom_point(size = 3, alpha = 0.8) +
+  facet_wrap(~Chemical_Variable, scales = "free_y") +
+  labs(
+    title = "Chemical Variables by Zone and Season",
+    x = "Zone",
+    y = "Value"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "top")
+```
+<div style="text-align: left;">
+### **Summary of Seasonal Chemical Patterns in Maunalua Bay**
+
+- **SPRING** samples show **lower temperatures** compared to FALL,<br>especially in the **Transition** and **Diffuse** zones.  
+- **Silicate** concentrations are **higher in SPRING**,<br>with the most pronounced increase in the **Transition zone**.  
+- **Phosphate** levels are **slightly elevated** in **SPRING**,<br>particularly in the **Transition zone**, suggesting *seasonal nutrient shifts*.  
+- **pH and salinity remain relatively stable** across seasons and zones,<br>showing minimal seasonal variation.
+
+## The Site
+![Maunalua Bay](C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/Week_06/Image/maunalua.jpg){width=70% fig-align="center"}
+
+<div style="text-align: center;">
+<span style="font-size:0.8em; color:gray;">www.hawaiianbeachrentals.com</span>
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+quarto render yourfile.qmd --to html
+pagedown::chrome_print("Tangalin_homework_week6.html")
+```
