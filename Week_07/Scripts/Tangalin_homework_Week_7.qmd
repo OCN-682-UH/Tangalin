@@ -1,0 +1,98 @@
+## title: "Tangalin_homework Week 7"
+author: "Natalia Tangalin"
+date: today 
+format:
+  output:
+  html:
+    theme: molten lava
+  pdf:
+    documentclass: article
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+    documentclass: article #need LaTeX
+knitr:                     #to suppress Rchunk warning messages        opts_chunk: 
+    message: false
+    warning: false
+---
+# Introduction
+  
+Today we mapping meteorites
+
+## R Packages We Need
+
+```{r}
+#| message: false #blocks messages #blocks messages
+#| warning: false #blocks warnings again
+#| echo: true    #see code in document
+
+library(ggmap)
+library(tidyverse)
+library(here)
+library(ggspatial)
+library(latexpdf)
+
+### Load data ######
+meteorites<-read_csv(here("Week_07","data","meteorites.csv"))
+glimpse(meteorites)
+
+```
+###Meteorites heavier than an adult hippopotamus (>1,300kg) will be kept to map
+
+```{r}
+#| label: metorites-filtered
+#| message: false
+#| warning: false
+#| echo: false
+### Clean data to eliminate NAs and mass less than an adult Hippo
+meteorites_filtered <- meteorites %>%
+  drop_na() %>%   # Drop any rows with NAs
+  filter(mass >= 1300000) # Keep rows where mass is >= 1,300,000 g
+
+write_csv(meteorites_filtered, "C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/Week_07/Data/meteorites_filtered.csv")  #save the cleaned CSV to data
+print(head(meteorites_filtered))#check data
+
+```
+### Let's load a map to visualize where they are found around the globe
+
+```{r}
+#| label: world-map 
+#| message: false
+#| warning: false
+#| echo: true
+### Load map ###
+world_map <- get_map(location = c(lon = 0, lat = 0), zoom = 1, source = "google", maptype = "hybrid")
+# Plot the google map using ggmap
+ggmap(world_map)
+
+```
+
+##Meteorite Strike Map
+```{r}
+#| label: meteorites_filtered-plot #code chunk name
+#| fig-cap: "Meteorites larger than an adult hippopotamus" #caption
+#| fig-align: "center" #center on page
+#| fig-width: 10 # make 10 inches wide
+#| fig-height: 5 # 5 inches tall
+#| message: false #maybe redundant
+#| echo: true #hide code
+
+ggmap(world_map) +  #Base worldmap
+   geom_point(data = meteorites_filtered, 
+             aes(x = long, y = lat, color = mass, size = mass),  # Map size to mass
+             alpha = 0.7) +   # Adjust transparency to see overlap points
+   scale_color_gradient(low = "yellow", high = "red", name = "Mass (g)") +   # Change scale colors
+   annotation_scale( bar_cols = c("white", "grey"),
+                     location = "bl") +  # put the bar on the bottom left and make the colors yellow and white
+   annotation_north_arrow(location = "tl") +  # add a north arrow
+   coord_sf(crs = 4326) + # for the scale bar to work it needs to be in this coordinate system - this is a typical coordinate reference system for a GPS (WGS84)
+labs(title = "Meteorite Strikes Heavier than a Hippopotamus", 
+       x = "Longitude", # change title y axis
+       y = "Latitude") +   # change labels y axis 
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))  #center and style the title
+
+
+```
+
+
