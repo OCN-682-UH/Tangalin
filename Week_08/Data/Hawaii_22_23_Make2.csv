@@ -1,0 +1,283 @@
+﻿Vehicle_Make,Accident_Involved,Vehicle_Type,Drivers_License_Status
+Nissan/Datsun Frontier ,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Acura ILX,Tree (Standing Only),Motor Scooter,Valid
+Other Make 350cc or greater (ATV),Pedestrian,Light Pickup,Valid
+Acura MDX,Pedestrian,Light Pickup,Valid
+Toyota 4-Runner,Rollover/Overturn,Light Pickup,Canceled or denied
+Ford Mustang/Mustang II,Pedestrian,"4-door sedan, hardtop",Expired
+Chevrolet Medium/Heavy - CBE,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Hyundai Tiburon,Motor Vehicle In-Transport,"Truck-tractor (Cab only, or with any number of trailing unit; any weight)",Valid
+Subaru Forester,Pedalcyclist,Light Pickup,Valid
+"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,Light Pickup,Valid
+Other Make 0-50cc,Motor Vehicle In-Transport,"4-door sedan, hardtop",Expired
+Jeep / Kaiser-Jeep / Willys- Jeep Compass,Pedalcyclist,"Single-unit straight truck or Cab-Chassis (GVWR range 19,501 to 26,000 lbs.)",Valid
+Honda CR-V,Embankment,Two Wheel Motorcycle (excluding motor scooters),Valid
+Jeep / Kaiser-Jeep / Willys- Jeep Cherokee ,Rollover/Overturn,Light Pickup,Revoked
+Toyota Tacoma,Concrete Traffic Barrier,Two Wheel Motorcycle (excluding motor scooters),Expired
+Other Make 125-349cc,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Suspended
+Chevrolet Colorado,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Hyundai Sonata,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),Valid
+Honda 0- 50 cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Honda 0- 50 cc,Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Canceled or denied
+Dodge Medium/Heavy - CBE,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,Light Pickup,Valid
+Suzuki 750cc-over,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Nissan/Datsun Frontier,Motor Vehicle In-Transport,Light Pickup,Suspended
+Toyota Tacoma,Pedalcyclist,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Valid
+Ford Other (light truck),Tree (Standing Only),"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Valid
+Not Reported Not Reported,Fell/Jumped from Vehicle,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Unknown License Status
+Toyota Camry,Parked Motor Vehicle,Light Pickup,Revoked
+Yamaha 450-749cc,Bridge Pier or Support,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Valid
+Mitsubishi Lancer/Lancer Sportback/ Lancer Evolution,Pedestrian,Light Pickup,Unknown License Status
+Yamaha 450-749cc,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Harley-Davidson 750cc or greater,Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Honda Pilot,Pedestrian,Light Pickup,Valid
+Ford F-Series pickup,Tree (Standing Only),Motor Scooter,Valid
+Honda 450-749 cc,Rollover/Overturn,Light Pickup,Valid
+Nissan/Datsun Titan,Pedalcyclist,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Cadillac CTS/CTC,Pedalcyclist,Light Pickup,Valid
+Honda 450-749 cc,Embankment,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Yamaha 750cc or greater,Parked Motor Vehicle,Light Pickup,Valid
+Toyota Tacoma,Fire/Explosion,Light Pickup,Expired
+Honda HR-V,Pedalcyclist,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Ford Escape,Pedestrian,Light Pickup,Valid
+Yamaha 450-749cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Ford F-Series pickup,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Kawasaki 350-449cc,Pedestrian,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)",Valid
+KIA Forte,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Nissan/Datsun Sentra,Motor Vehicle In-Transport,Light Pickup,Canceled or denied
+Toyota Tacoma,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Chevrolet TrailBlazer ,Motor Vehicle In-Transport,Light Pickup,Valid
+Toyota Tundra,Embankment,"4-door sedan, hardtop",Valid
+Nissan/Datsun Frontier ,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)",Expired
+Nissan/Datsun Altima,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Other Make 0-50cc,Motor Vehicle In-Transport,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)",Valid
+Jeep / Kaiser-Jeep / Willys- Jeep Gladiator,Ditch,Two Wheel Motorcycle (excluding motor scooters),Valid
+Ford Escape,Motor Vehicle In-Transport,"4-door sedan, hardtop",Not licensed
+KIA Soul,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)",Valid
+Mercedes-Benz GLK Class,Motor Vehicle In-Transport,Unknown body type,Valid
+Honda CR-V,Motor Vehicle In-Transport,Motor Scooter,Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),Valid
+Nissan/Datsun Frontier ,Parked Motor Vehicle,"Truck-tractor (Cab only, or with any number of trailing unit; any weight)",Valid
+"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,Moped,Valid
+BMW 750cc and over,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),Valid
+Nissan/Datsun Sentra,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+GMC Acadia ,Fell/Jumped from Vehicle,Two Wheel Motorcycle (excluding motor scooters),Valid
+Nissan/Datsun Pathfinder,Pedestrian,Light Pickup,Unknown License Status
+Chevrolet Equinox,Pedestrian,"4-door sedan, hardtop",Not licensed
+Suzuki 450-749cc,Pedestrian,"4-door sedan, hardtop",Valid
+Toyota Tacoma,Pedestrian,Station Wagon (excluding van and truck based),Valid
+Honda CR-V,Motor Vehicle In-Transport,Light Pickup,Valid
+Mercedes-Benz SLK,Motor Vehicle In-Transport,Light Pickup,Suspended
+Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+BMW X5 ,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Toyota Corolla,Immersion or Partial Immersion,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+"GMC C, K, R, V-series pickup/     Sierra",Motor Vehicle In-Transport,Light Pickup,Revoked
+Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,Motor Scooter,Expired
+Harley-Davidson 750cc or greater,Immersion or Partial Immersion,"4-door sedan, hardtop",Valid
+Acura TSX,Motor Vehicle In-Transport,Light Pickup,Not licensed
+Yamaha 450-749cc,Motor Vehicle In-Transport,Light Pickup,Valid
+Chevrolet Camaro,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),Valid
+Kawasaki 750cc or greater,Motor Vehicle In-Transport,Light Pickup,Valid
+Nissan/Datsun Frontier ,Motor Vehicle In-Transport,"Large Van-Includes van-based buses (B150-B350, Sportsman, Royal Maxiwagon, Ram, Tradesman,...)",Valid
+Nissan/Datsun Altima,Motor Vehicle In-Transport,Light Pickup,Suspended
+Honda 450-749 cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Suspended
+Ford E-Series Van/Econoline,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Yamaha 450-749cc,Concrete Traffic Barrier,Two Wheel Motorcycle (excluding motor scooters),Valid
+Toyota Matrix,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Mazda Tribute,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Canceled or denied
+Toyota Tacoma,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)",Valid
+Toyota 4-Runner,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Not licensed
+Nissan/Datsun Rogue ,Motor Vehicle In-Transport,"4-door sedan, hardtop",Expired
+Mazda Miata/MX-5,Rollover/Overturn,Light Pickup,Valid
+Dodge Medium/Heavy - CBE,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Toyota Camry,Pedalcyclist,Light Pickup,Valid
+Other Make 0-50cc,Motor Vehicle In-Transport,Motor Scooter,Expired
+GMC G-series van/Savana,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Chrysler PT Cruiser,Pedestrian,"4-door sedan, hardtop",Valid
+Nissan/Datsun Frontier,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Hyundai Santa Fe,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Mazda CX-9,Motor Vehicle In-Transport,"4-door sedan, hardtop",Canceled or denied
+Yamaha 450-749cc,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Revoked
+Gillig Other (bus),Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Chevrolet Fullsize Blazer/Tahoe,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Other Make 750cc or greater,Motor Vehicle In-Transport,Motor Scooter,Valid
+KIA Sedona,Pedestrian,Unknown body type,Valid
+Ford F-Series pickup,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)",Valid
+Ford Mustang/Mustang II,Motor Vehicle In-Transport,Light Pickup,Valid
+Unknown Make Unknown cc,Motor Vehicle In-Transport,"2-door sedan,hardtop,coupe",Valid
+Ford F-Series pickup,Motor Vehicle In-Transport,Light Pickup,Valid
+Ford F-Series pickup,Motor Vehicle In-Transport,"2-door sedan,hardtop,coupe",Valid
+Dodge Ram Pickup,Motor Vehicle In-Transport,Light Pickup,Valid
+Toyota Matrix,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Ford Ranger,Fell/Jumped from Vehicle,Two Wheel Motorcycle (excluding motor scooters),Valid
+Nissan/Datsun Frontier ,Utility Pole/Light Support,Light Pickup,Valid
+Toyota RAV4 ,Motor Vehicle In-Transport,Light Pickup,Valid
+Other Make Unknown cc,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+"Chevrolet C, K, R, V-series pickup/Silverado",Pedestrian,"4-door sedan, hardtop",Valid
+Honda Ridgeline,"Post, Pole or Other Supports","Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Motor Scooter,Valid
+Pontiac Grand Prix (FWD),Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Toyota Corolla,Fire/Explosion,Single-unit straight truck or Cab-Chassis,Valid
+Other Make Sterling,Pedestrian,"2-door sedan,hardtop,coupe",No
+Ford F-Series pickup,Pedestrian,Light Pickup,Valid
+Toyota Corolla,Motor Vehicle In-Transport,Light Pickup,No Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Honda Accord,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Peterbilt Medium/Heavy - CBE,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Harley-Davidson 750cc or greater,Pedestrian,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)",Valid
+Toyota Tacoma,Embankment,Two Wheel Motorcycle (excluding motor scooters),Valid
+Honda 450-749 cc,Concrete Traffic Barrier,"4-door sedan, hardtop",No Valid
+Toyota 4-Runner,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Jeep / Kaiser-Jeep / Willys- Jeep YJ series/Wrangler,Motor Vehicle In-Transport,Light Pickup,No Valid
+Volvo 70 Series,Pedestrian,Unknown body type,Valid
+Honda 750 cc or greater,Pedestrian,Station Wagon (excluding van and truck based),Valid
+Nissan/Datsun Rogue ,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Mercedes-Benz E Class,Motor Vehicle In-Transport,Light Pickup,Valid
+Toyota Tacoma,Wall,5-door/4-door hatchback,Valid
+Toyota 4-Runner,Motor Vehicle In-Transport,Motor Scooter,Valid
+"Chevrolet C, K, R, V-series pickup/Silverado",Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Jeep / Kaiser-Jeep / Willys- Jeep Grand Cherokee ,Pedestrian,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",No Valid
+Honda Pilot,Motor Vehicle In-Transport,"2-door sedan,hardtop,coupe",Valid
+Jeep / Kaiser-Jeep / Willys- Jeep YJ series/Wrangler,Motor Vehicle In-Transport,Moped,Valid
+"GMC C, K, R, V-series pickup/Sierra",Curb,Two Wheel Motorcycle (excluding motor scooters),Valid
+Ford Edge,Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Dodge Ram Pickup,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Toyota Corolla,Motor Vehicle In-Transport,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)",Valid
+Lexus RX330/350/400h/450h,Pedestrian,Light Pickup,Valid
+Mazda Pickup/ B-Series Pickup,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",No Valid
+Other Make Unknown cc,Utility Pole/Light Support,Light Pickup,Valid
+Toyota Tacoma,Tree (Standing Only),"4-door sedan, hardtop",No Valid
+Toyota Highlander,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Toyota T-100,Motor Vehicle In-Transport,Light Pickup,Valid
+Mercedes-Benz GLK Class,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Motor Scooter,No Valid
+Toyota Tacoma,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Toyota RAV4 *,Pedestrian,Unknown body type,Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Light Pickup,Valid
+Suzuki 450-749cc,Motor Vehicle In-Transport,Light Pickup,Valid
+Honda Element,Pedestrian,3-door/2-door hatchback,No Valid
+Toyota Sienna,Guardrail Face,Two Wheel Motorcycle (excluding motor scooters),Valid
+Infiniti QX4,Guardrail Face,"4-door sedan, hardtop",Valid
+Yamaha 750cc or greater,Pedalcyclist,Light Pickup,No Valid
+Toyota Tundra,Utility Pole/Light Support,3-door/2-door hatchback,No Valid
+Toyota Highlander,Pedestrian,Light Pickup,Valid
+Toyota Tacoma,Pedestrian,"4-door sedan, hardtop",Valid
+Honda Accord  ,Rollover/Overturn,Recreational Off-Highway Vehicle,Valid
+Chrysler Pacifica,Parked Motor Vehicle,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Valid
+Toyota 4-Runner,Tree (Standing Only),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Isuzu Medium/Heavy,Rollover/Overturn,"2-door sedan,hardtop,coupe",No Valid
+Yamaha 750cc or greater,Pedalcyclist,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)",Valid
+"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,3-door/2-door hatchback,No Valid
+Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Dodge Caravan/Grand Caravan,Motor Vehicle In-Transport,"4-door sedan, hardtop",Unknown
+Honda 0- 50 cc,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+KIA Soul,Utility Pole/Light Support,Motor Scooter,Unknown
+Freightliner Medium/Heavy - CBE,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),Valid
+Honda 0- 50 cc,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Mazda Mazda5,Fire/Explosion,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Ford Bronco (thru 1977 ),Pedestrian,Light Pickup,No Valid
+Yamaha 750cc or greater,Motor Vehicle In-Transport,Motor Scooter,Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Light Pickup,Unknown
+Honda Accord,Wall,"4-door sedan, hardtop",No Valid
+"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,Motor Scooter,Valid
+Toyota Matrix,Motor Vehicle In-Transport,Motor Scooter,Valid
+Dodge Ram Pickup,Fell/Jumped from Vehicle,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)",Valid
+Toyota Tacoma,Wall,Two Wheel Motorcycle (excluding motor scooters),Valid
+Honda Accord,Guardrail Face,Two Wheel Motorcycle (excluding motor scooters),Valid
+Harley-Davidson 750cc or greater,Tree (Standing Only),Light Pickup,Valid
+Ford Escape,Pedestrian,Light Pickup,Valid
+Toyota Tacoma,Pedestrian,"Utility Vehicle, Unknown body type",Valid
+Yamaha 0-50cc,Pedestrian,Not Reported,Valid
+Honda Accord,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+"Chevrolet C, K, R, V-series pickup/Silverado",Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),No Valid
+"Chevrolet C, K, R, V-series pickup/Silverado",Concrete Traffic Barrier,"4-door sedan, hardtop",Valid
+Ford Edge ,Guardrail Face,Two Wheel Motorcycle (excluding motor scooters),No Valid
+Nissan/Datsun Frontier ,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Mercedes-Benz SPRINTER,Motor Vehicle In-Transport,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Valid
+Toyota Tacoma,Embankment,Light Pickup,Valid
+Kawasaki 450-749cc,Curb,Two Wheel Motorcycle (excluding motor scooters),Valid
+Other Domestic Manufacturers Tesla,Pedalcyclist,Light Pickup,Valid
+Yamaha 450-749cc,Pedestrian,"4-door sedan, hardtop",No Valid
+Toyota 4-Runner,Curb,Two Wheel Motorcycle (excluding motor scooters),Valid
+Honda 750 cc or greater,Fell/Jumped from Vehicle,Two Wheel Motorcycle (excluding motor scooters),Valid
+KIA Sedona,Pedestrian,Light Pickup,Valid
+Nissan/Datsun Rogue,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Not licensed
+Nissan/Datsun Versa,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+KIA Niro,Pedalcyclist,Light Pickup,Valid
+"GMC C, K, R, V-series pickup/Sierra","Post, Pole or Other Supports",Two Wheel Motorcycle (excluding motor scooters),Valid
+Other Make 0-50cc,Traffic Signal Support,"4-door sedan, hardtop",Unknown
+Harley-Davidson 750cc or greater,Pedestrian,Light Pickup,Valid
+Mercury Milan,Embankment,"4-door sedan, hardtop",No Valid
+Harley-Davidson 750cc or greater,Pedalcyclist,Light Pickup,Valid
+Honda HR-V,"Post, Pole or Other Supports","Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Honda Accord ,Pedestrian,Light Pickup,Valid
+Jeep / Kaiser-Jeep / Willys- Jeep Cherokee,Motor Vehicle In-Transport,Light Pickup,Valid
+Toyota 4-Runner,Motor Vehicle In-Transport,"4-door sedan, hardtop",Valid
+Honda Accord ,Rollover/Overturn,Motor Scooter,Valid
+Other Make 125-349cc,Pedalcyclist,Light Pickup,Not licensed
+Mazda MPV,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Toyota Tundra,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),No Valid
+"Honda Civic/CRX, del Sol",Pedalcyclist,"4-door sedan, hardtop",Unknown
+Chevrolet S-10/T-10 Pickup,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",No Valid
+Toyota Solara,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Ford Ranger,Motor Vehicle In-Transport,Light Pickup,No Valid
+Hyundai Elantra,Motor Vehicle In-Transport,Light Pickup,Valid
+Harley-Davidson 750cc or greater,Parked Motor Vehicle,"4-door sedan, hardtop",Valid
+Toyota Tacoma,Curb,Two Wheel Motorcycle (excluding motor scooters),No Valid
+Toyota Tacoma,Utility Pole/Light Support,"4-door sedan, hardtop",Valid
+Jaguar XF/XFR,Pedestrian,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Valid
+Toyota Camry,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Honda CR-V,Tree (Standing Only),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Other Make 0-50cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Toyota 4-Runner,Motor Vehicle In-Transport,Light Pickup,Valid
+Ford Medium/Heavy,Other Object (not fixed),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Honda Accord,Wall,"Convertible(excludes sun-roof,t-bar)",Valid
+"Chevrolet C, K, R, V-series pickup/Silverado",Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Nissan/Datsun Frontier,Motor Vehicle In-Transport,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Unknown
+Yamaha 125-349cc,Motor Vehicle In-Transport,5-door/4-door hatchback,Valid
+Toyota 4-Runner,Motor Vehicle In-Transport,Light Pickup,Valid
+Honda 125-349 cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Ford Medium/Heavy ,Utility Pole/Light Support,Two Wheel Motorcycle (excluding motor scooters),No Valid
+Yamaha 750cc or greater,Tree (Standing Only),"4-door sedan, hardtop",Valid
+Toyota Corolla,Utility Pole/Light Support,Two Wheel Motorcycle (excluding motor scooters),No Valid
+Kawasaki 450-749cc,Pedestrian,"2-door sedan,hardtop,coupe",Unknown
+Dodge Ram Pickup,"Motor Vehicle In-Transport Strikes or is Struck by Cargo, Persons or Objects Set-in-Motion from/by Another Motor Vehicle In Transport",Two Wheel Motorcycle (excluding motor scooters),No Valid
+Toyota Scion xB ,"Motor Vehicle In-Transport Strikes or is Struck by Cargo, Persons or Objects Set-in-Motion from/by Another Motor Vehicle In Transport",Light Pickup,Unknown
+Honda 750 cc or greater,Rollover/Overturn,"4-door sedan, hardtop",No Valid
+Toyota Tacoma,Fire Hydrant,Two Wheel Motorcycle (excluding motor scooters),Valid
+Mazda Mazda2,Pedestrian,"Large Van-Includes van-based buses (B150-B350, Sportsman, Royal Maxiwagon, Ram, Tradesman,...)",Unknown
+Honda 125-349 cc,Tree (Standing Only),Two Wheel Motorcycle (excluding motor scooters),Valid
+Other Make 750cc or greater,Ground,Station Wagon (excluding van and truck based),Valid
+Honda Pilot,Other Fixed Object,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+BMW 3-series,Pedalcyclist,Light Pickup,No Valid
+Other Make Unknown cc,Tree (Standing Only),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",No Valid
+Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),No Valid
+Mercedes-Benz M/ML Class,Motor Vehicle In-Transport,"Convertible(excludes sun-roof,t-bar)",Valid
+Honda 450-749 cc,Pedestrian,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)",Unknown
+Ford Medium/Heavy Van-Based Vehicle,Pedestrian,"4-door sedan, hardtop",No Valid
+Nissan/Datsun Frontier,Motor Vehicle In-Transport,Motor Scooter,Valid
+Honda Element,Motor Vehicle In-Transport,"Large Van-Includes van-based buses (B150-B350, Sportsman, Royal Maxiwagon, Ram, Tradesman,...)",No Valid
+Honda Unknown,Pedestrian,Station Wagon (excluding van and truck based),Valid
+Volkswagen Jetta/Jetta SportsWagen,Pedestrian,Light Pickup,Valid
+Subaru Forester,Utility Pole/Light Support,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")",Valid
+Ford F-Series pickup,Fire/Explosion,Station Wagon (excluding van and truck based),Valid
+Nissan/Datsun Altima,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Valid
+Other Make 0-50cc,Motor Vehicle In-Transport,Transit Bus (City Bus),Valid
+BMW 3-series,Motor Vehicle In-Transport,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")",Valid
+Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Not licensed
+Dodge Ram Pickup,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)",Valid
+Chevrolet Corvette,Motor Vehicle In-Transport,Light Pickup,Not licensed
+BMW 125-349cc,Motor Vehicle In-Transport,"Convertible(excludes sun-roof,t-bar)",Valid
+Toyota Corolla,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters),Unknown
+Toyota Tundra,Pedalcyclist,Light Pickup,Valid
+Mazda 323/GLC,Embankment,Light Pickup,Valid
+,Tree (Standing Only),Light Pickup,Valid
+,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based),No Valid
+,Motor Vehicle In-Transport,Light Pickup,Valid
+,Motor Vehicle In-Transport,Light Pickup,Unknown
+,Pedestrian,,Valid

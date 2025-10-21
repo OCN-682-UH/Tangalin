@@ -1,0 +1,283 @@
+STATENAME,ST_CASE,FATALS,VE_TOTAL,COUNTY,CITY,MONTH,MONTHNAME,DAY,DAY_WEEK,YEAR,HOUR,URBAN-RURAL,LONGITUDE,LATITUDE,HARM_EV,LGT_COND,WEATHER,Vehicle_Make,Accident_Involved,Vehicle_Type
+Hawaii,150001,2,1,HONOLULU,KAILUA,January,2,2,Monday,2023,5,Urban,21.38233611,-157.7404972,Pedestrian,Dark - Lighted,Clear,Nissan/Datsun Frontier ,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150002,1,1,HAWAII,PAHOA,January,14,14,Saturday,2023,5,Urban,19.51332778,-154.9629194,Pedestrian,Dark - Not Lighted,Clear,Acura ILX,Tree (Standing Only),Motor Scooter
+Hawaii,150003,2,1,HAWAII,KURTISTOWN,January,13,13,Friday,2023,22,Urban,19.52950556,-155.0167722,Rollover/Overturn,Dark - Not Lighted,Clear,Other Make 350cc or greater (ATV),Pedestrian,Light Pickup
+Hawaii,150004,1,2,HONOLULU,HONOLULU,January,28,28,Saturday,2023,2,Urban,21.30905,-157.8495639,Motor Vehicle In-Transport,Dark - Lighted,Clear,Acura MDX,Pedestrian,Light Pickup
+Hawaii,150005,1,1,HONOLULU,KANE`OHE,January,29,29,Sunday,2023,18,Urban,21.39275,-157.8133111,Embankment,Dark - Lighted,Rain,Toyota 4-Runner,Rollover/Overturn,Light Pickup
+Hawaii,150006,1,1,HONOLULU,KAILUA,January,31,31,Tuesday,2023,17,Urban,21.40672778,-157.7582139,Pedalcyclist,Daylight,Cloudy,Ford Mustang/Mustang II,Pedestrian,"4-door sedan, hardtop"
+Hawaii,150007,1,3,HONOLULU,HONOLULU,January,15,15,Sunday,2023,9,Urban,21.28853889,-157.8344194,Motor Vehicle In-Transport,Daylight,Clear,Chevrolet Medium/Heavy - CBE,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150008,3,2,MAUI,WAILUKU HAWAIIAN HOME LAND (HISTORICAL),February,10,10,Friday,2023,22,Urban,20.90628056,-156.4870667,Motor Vehicle In-Transport,Dark - Lighted,Cloudy,Hyundai Tiburon,Motor Vehicle In-Transport,"Truck-tractor (Cab only, or with any number of trailing unit; any weight)"
+Hawaii,150009,1,2,HONOLULU,HONOLULU,February,14,14,Tuesday,2023,5,Urban,21.36627222,-157.8437194,Pedestrian,Dark - Lighted,Rain,Subaru Forester,Pedalcyclist,Light Pickup
+Hawaii,150010,4,1,HAWAII,WAIKOLOA VILLAGE,February,5,5,Sunday,2023,3,Urban,19.92186944,-155.8604806,Utility Pole/Light Support,Other,Clear,"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150011,2,1,HONOLULU,HONOLULU,February,15,15,Wednesday,2023,6,Urban,21.29645556,-157.849925,Pedestrian,Dark - Lighted,Clear,"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,Light Pickup
+Hawaii,150012,1,2,HONOLULU,HONOLULU,February,14,14,Tuesday,2023,16,Urban,21.34706667,-157.8610611,Motor Vehicle In-Transport,Daylight,Cloudy,Other Make 0-50cc,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150013,2,1,HONOLULU,KAHALU`U,February,17,17,Friday,2023,20,Urban,21.52628056,-157.8347972,Wall,Dark - Lighted,Rain,Jeep / Kaiser-Jeep / Willys- Jeep Compass,Pedalcyclist,"Single-unit straight truck or Cab-Chassis (GVWR range 19,501 to 26,000 lbs.)"
+Hawaii,150014,2,2,HONOLULU,WAIPAHU,February,18,18,Saturday,2023,21,Urban,21.38675833,-157.9980361,Motor Vehicle In-Transport,Dark - Lighted,Clear,Honda CR-V,Embankment,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150016,1,1,HONOLULU,PEARL CITY,February,25,25,Saturday,2023,22,Urban,21.34966667,-157.9266889,Curb,Dark - Lighted,Clear,Jeep / Kaiser-Jeep / Willys- Jeep Cherokee ,Rollover/Overturn,Light Pickup
+Hawaii,150017,2,1,HONOLULU,Other,March,5,5,Sunday,2023,23,Urban,21.57464444,-157.8779028,Fell/Jumped from Vehicle,Dark - Lighted,Not Reported,Toyota Tacoma,Concrete Traffic Barrier,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150018,1,1,HONOLULU,HONOLULU,March,12,12,Sunday,2023,0,Urban,21.3232,-157.86155,Guardrail Face,Dark - Lighted,Clear,Other Make 125-349cc,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150019,1,1,HAWAII,PAHOA,February,26,26,Sunday,2023,19,Rural,19.44630833,-154.8559472,Embankment,Dark - Not Lighted,Rain,Chevrolet Colorado,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150021,3,1,MAUI,Other,April,3,3,Monday,2023,19,Rural,20.80923056,-156.6055444,Pedestrian,Dark - Not Lighted,Clear,Hyundai Sonata,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+Hawaii,150022,1,1,MAUI,KAHULUI,April,4,4,Tuesday,2023,23,Urban,20.88676389,-156.4652528,Pedestrian,Dark - Lighted,Clear,Honda 0- 50 cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150023,1,1,MAUI,KIHEI,April,5,5,Wednesday,2023,4,Urban,20.750525,-156.4525111,Pedestrian,Dark - Not Lighted,Clear,Honda 0- 50 cc,Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150024,4,2,HONOLULU,MAKAHA,April,9,9,Sunday,2023,18,Urban,21.52032222,-158.2278111,Motor Vehicle In-Transport,Daylight,Clear,Dodge Medium/Heavy - CBE,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150025,1,1,HONOLULU,KANE`OHE,April,15,15,Saturday,2023,1,Urban,21.40295278,-157.8073056,Concrete Traffic Barrier,Dark - Lighted,Cloudy,Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150026,1,1,HONOLULU,Other,April,15,15,Saturday,2023,2,Urban,21.32348333,-157.8621,Guardrail Face,Dark - Lighted,Clear,Suzuki 750cc-over,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150027,2,2,HONOLULU,WAIPAHU,April,15,15,Saturday,2023,16,Urban,21.426375,-157.9955889,Motor Vehicle In-Transport,Daylight,Clear,Nissan/Datsun Frontier,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150028,2,1,HAWAII,KAILUA KONA,April,4,4,Tuesday,2023,14,Urban,19.71978611,-156.0042417,Embankment,Daylight,Clear,Toyota Tacoma,Pedalcyclist,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+Hawaii,150029,1,1,HONOLULU,HONOLULU,April,25,25,Tuesday,2023,19,Urban,21.28259722,-157.7145528,Curb,Dark - Lighted,Clear,Ford Other (light truck),Tree (Standing Only),"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+Hawaii,150030,4,1,HONOLULU,HONOLULU,April,25,25,Tuesday,2023,21,Urban,21.34279444,-157.9355056,Pedalcyclist,Dark - Not Lighted,Clear,Not Reported Not Reported,Fell/Jumped from Vehicle,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150031,1,1,HONOLULU,HONOLULU,April,29,29,Saturday,2023,23,Urban,21.32707778,-157.8852639,Pedestrian,Dark - Lighted,Clear,Toyota Camry,Parked Motor Vehicle,Light Pickup
+Hawaii,150032,2,1,HONOLULU,KAPOLEI,April,30,30,Sunday,2023,1,Urban,21.33499167,-158.0482194,Curb,Dark - Lighted,Clear,Yamaha 450-749cc,Bridge Pier or Support,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+Hawaii,150033,1,1,HONOLULU,WAIPAHU,April,30,30,Sunday,2023,8,Urban,21.37609722,-158.0273611,Fell/Jumped from Vehicle,Daylight,Clear,Mitsubishi Lancer/Lancer Sportback/ Lancer Evolution,Pedestrian,Light Pickup
+Hawaii,150034,2,1,KAUAI,KAPA`A,March,26,26,Sunday,2023,21,Urban,22.07613056,-159.3181361,Pedestrian,Dark - Lighted,Rain,Yamaha 450-749cc,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150035,1,1,HAWAII,KEA`AU,April,20,20,Thursday,2023,18,Urban,19.55828056,-154.9905806,Pedestrian,Dusk,Clear,Harley-Davidson 750cc or greater,Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150036,1,2,HONOLULU,WAHIAWA,May,4,4,Thursday,2023,5,Urban,21.48941389,-158.0352667,Motor Vehicle In-Transport,Dawn,Cloudy,Honda Pilot,Pedestrian,Light Pickup
+Hawaii,150037,3,1,HONOLULU,Other,May,12,12,Friday,2023,20,Urban,21.28294167,-157.7151528,Pedalcyclist,Dark - Lighted,Clear,Ford F-Series pickup,Tree (Standing Only),Motor Scooter
+Hawaii,150038,2,1,HONOLULU,KAHUKU,May,14,14,Sunday,2023,22,Urban,21.69329722,-158.0189583,"Post, Pole or Other Supports",Dark - Not Lighted,Clear,Honda 450-749 cc,Rollover/Overturn,Light Pickup
+Hawaii,150039,1,1,HAWAII,KAILUA KONA,March,7,7,Tuesday,2023,22,Urban,19.69046667,-156.0227944,Traffic Signal Support,Dark - Unknown Lighting,Clear,Nissan/Datsun Titan,Pedalcyclist,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150040,1,1,HAWAII,VOLCANO,May,14,14,Sunday,2023,20,Rural,19.488225,-155.1513806,Pedestrian,Dark - Not Lighted,Rain,Cadillac CTS/CTC,Pedalcyclist,Light Pickup
+Hawaii,150041,1,1,HONOLULU,`EWA BEACH,June,4,4,Sunday,2023,2,Urban,21.34099167,-158.0018611,Embankment,Dark - Not Lighted,Cloudy,Honda 450-749 cc,Embankment,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150042,1,1,MAUI,Other,June,6,6,Tuesday,2023,8,Urban,20.83583056,-156.6424417,Pedalcyclist,Daylight,Clear,Yamaha 750cc or greater,Parked Motor Vehicle,Light Pickup
+Hawaii,150043,1,1,HONOLULU,`AIEA,June,15,15,Thursday,2023,23,Urban,21.38904444,-157.9427806,"Post, Pole or Other Supports",Dark - Lighted,Clear,Toyota Tacoma,Fire/Explosion,Light Pickup
+Hawaii,150044,1,1,MAUI,Other,April,27,27,Thursday,2023,19,Urban,20.87672222,-156.6783278,Pedestrian,Dark - Lighted,Clear,Honda HR-V,Pedalcyclist,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150045,1,2,MAUI,PA`IA,May,29,29,Monday,2023,14,Urban,20.92853611,-156.3663861,Motor Vehicle In-Transport,Daylight,Clear,Ford Escape,Pedestrian,Light Pickup
+Hawaii,150046,1,1,HAWAII,KAILUA KONA,June,18,18,Sunday,2023,11,Urban,19.72550833,-156.0337139,Rollover/Overturn,Daylight,Clear,Yamaha 450-749cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150047,1,1,MAUI,KAHULUI,July,27,27,Thursday,2023,11,Rural,20.85461389,-156.4211639,Pedalcyclist,Daylight,Clear,Ford F-Series pickup,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150048,6,2,MAUI,Other,August,2,2,Wednesday,2023,3,Urban,20.90445278,-156.6856583,Motor Vehicle In-Transport,Dark - Not Lighted,Clear,Kawasaki 350-449cc,Pedestrian,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)"
+Hawaii,150049,2,1,HONOLULU,WAIMANALO,August,2,2,Wednesday,2023,13,Urban,21.32385556,-157.679,Pedalcyclist,Daylight,Clear,KIA Forte,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150050,2,4,HONOLULU,`AIEA,August,3,3,Thursday,2023,15,Urban,21.38873611,-157.9417444,Motor Vehicle In-Transport,Daylight,Clear,Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150051,1,1,HONOLULU,`AIEA,August,7,7,Monday,2023,17,Urban,21.37767222,-157.9270833,Parked Motor Vehicle,Daylight,Clear,Nissan/Datsun Sentra,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150052,1,1,HONOLULU,KAPOLEI,July,11,11,Tuesday,2023,21,Urban,21.34088056,-158.0743056,Curb,Dark - Lighted,Clear,Toyota Tacoma,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150053,3,1,HONOLULU,NANAKULI,August,10,10,Thursday,2023,0,Urban,21.38420278,-158.1483444,Curb,Dark - Lighted,Clear,Chevrolet TrailBlazer ,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150054,1,1,HONOLULU,WAHIAWA,August,6,6,Sunday,2023,11,Urban,21.48874722,-158.0376611,Pedestrian,Daylight,Clear,Toyota Tundra,Embankment,"4-door sedan, hardtop"
+Hawaii,150055,2,1,HONOLULU,HONOLULU,August,13,13,Sunday,2023,21,Urban,21.33313611,-157.8907417,Pedestrian,Dark - Not Lighted,Clear,Nissan/Datsun Frontier ,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)"
+Hawaii,150056,1,1,HONOLULU,MAKAKILO CITY,August,15,15,Tuesday,2023,21,Urban,21.35110278,-158.0883639,Curb,Dark - Lighted,Clear,Nissan/Datsun Altima,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150057,2,2,HONOLULU,WAHIAWA,August,21,21,Monday,2023,17,Urban,21.521675,-158.0721833,Fell/Jumped from Vehicle,Daylight,Clear,Other Make 0-50cc,Motor Vehicle In-Transport,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)"
+Hawaii,150058,2,1,HONOLULU,WAIPI`O ACRES,August,22,22,Tuesday,2023,20,Trafficway Not in State Inventory,21.42690556,-158.0012639,Other Object (not fixed),Dark - Lighted,Clear,Jeep / Kaiser-Jeep / Willys- Jeep Gladiator,Ditch,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150059,1,1,HAWAII,Other,August,13,13,Sunday,2023,20,Rural,19.11846111,-155.83415,Wall,Dark - Not Lighted,Cloudy,Ford Escape,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150060,1,3,HONOLULU,HONOLULU,September,7,7,Thursday,2023,16,Urban,21.29947222,-157.8531083,Motor Vehicle In-Transport,Daylight,Clear,KIA Soul,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150061,1,2,KAUAI,KILAUEA,August,12,12,Saturday,2023,19,Rural,22.202825,-159.3754667,Motor Vehicle In-Transport,Dark - Not Lighted,Clear,"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)"
+Hawaii,150062,1,1,HONOLULU,`EWA BEACH,September,13,13,Wednesday,2023,22,Urban,21.37624167,-158.0259139,Utility Pole/Light Support,Dark - Lighted,Clear,Mercedes-Benz GLK Class,Motor Vehicle In-Transport,Unknown body type
+Hawaii,150063,1,1,HONOLULU,WAIPI`O ACRES,September,11,11,Monday,2023,2,Urban,21.39901667,-158.0098444,Curb,Dark - Lighted,Clear,Honda CR-V,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150064,1,1,HAWAII,HILO,September,2,2,Saturday,2023,0,Urban,19.69583889,-155.0683861,Utility Pole/Light Support,Dark - Not Lighted,Clear,Toyota Tacoma,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+Hawaii,150065,2,1,MAUI,KAHULUI,September,22,22,Friday,2023,19,Urban,20.88405,-156.4275861,Pedestrian,Dark - Not Lighted,Rain,Nissan/Datsun Frontier ,Parked Motor Vehicle,"Truck-tractor (Cab only, or with any number of trailing unit; any weight)"
+Hawaii,150066,1,2,HONOLULU,WAIPAHU,September,20,20,Wednesday,2023,19,Urban,21.39832778,-158.0062944,Other Traffic Barrier,Dark - Lighted,Clear,"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,Moped
+Hawaii,150067,3,1,MAUI,KIHEI,September,19,19,Tuesday,2023,2,Urban,20.79650833,-156.4859944,Fence,Dark - Not Lighted,Clear,BMW 750cc and over,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+Hawaii,150068,4,1,MAUI,WAILUKU HAWAIIAN HOME LAND (HISTORICAL),October,3,3,Tuesday,2023,1,Urban,20.871175,-156.5104139,Curb,Dark - Not Lighted,Clear,Nissan/Datsun Sentra,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150069,1,1,KAUAI,LIHU`E,September,27,27,Wednesday,2023,4,Urban,21.98824167,-159.3467278,Pedestrian,Dark - Not Lighted,Cloudy,GMC Acadia ,Fell/Jumped from Vehicle,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150070,1,1,MAUI,KAHULUI,October,7,7,Saturday,2023,0,Urban,20.87693889,-156.4542639,Curb,Dark - Lighted,Clear,Nissan/Datsun Pathfinder,Pedestrian,Light Pickup
+Hawaii,150071,1,1,HONOLULU,HONOLULU,October,11,11,Wednesday,2023,22,Urban,21.33490556,-157.9189972,Concrete Traffic Barrier,Dark - Lighted,Clear,Chevrolet Equinox,Pedestrian,"4-door sedan, hardtop"
+Hawaii,150072,1,1,HAWAII,HILO,September,29,29,Friday,2023,19,Urban,19.70725556,-155.061125,Other Fixed Object,Dark - Unknown Lighting,Cloudy,Suzuki 450-749cc,Pedestrian,"4-door sedan, hardtop"
+Hawaii,150073,1,1,HAWAII,HILO,October,3,3,Tuesday,2023,9,Urban,19.70891667,-155.1342583,Pedalcyclist,Daylight,Clear,Toyota Tacoma,Pedestrian,Station Wagon (excluding van and truck based)
+Hawaii,150074,1,1,HONOLULU,KAPOLEI,October,19,19,Thursday,2023,19,Urban,21.34592222,-158.1219306,Tree (Standing Only),Dark - Lighted,Clear,Honda CR-V,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150075,1,2,HONOLULU,HONOLULU,October,4,4,Wednesday,2023,22,Urban,21.33546944,-157.8689722,Motor Vehicle In-Transport,Dark - Lighted,Clear,Mercedes-Benz SLK,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150076,1,1,HONOLULU,HONOLULU,October,27,27,Friday,2023,5,Urban,21.32153889,-157.855475,Pedestrian,Dawn,Clear,Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150077,1,1,HONOLULU,HONOLULU,October,30,30,Monday,2023,6,Urban,21.28929722,-157.8422222,Pedestrian,Dawn,Clear,BMW X5 ,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150078,1,2,HONOLULU,NANAKULI,October,24,24,Tuesday,2023,19,Urban,21.35715556,-158.1301833,Motor Vehicle In-Transport,Dark - Lighted,Clear,Toyota Corolla,Immersion or Partial Immersion,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150080,1,1,HONOLULU,WAHIAWA,November,4,4,Saturday,2023,16,Urban,21.50058333,-158.0233611,Pedestrian,Daylight,Clear,"GMC C, K, R, V-series pickup/     Sierra",Motor Vehicle In-Transport,Light Pickup
+Hawaii,150081,2,1,HONOLULU,HONOLULU,November,13,13,Monday,2023,7,Urban,21.32515278,-157.8619194,Pedestrian,Daylight,Clear,Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150082,5,1,HONOLULU,KAHALU`U,November,15,15,Wednesday,2023,1,Urban,21.47124167,-157.8448194,Utility Pole/Light Support,Dark - Lighted,Clear,Harley-Davidson 750cc or greater,Immersion or Partial Immersion,"4-door sedan, hardtop"
+Hawaii,150083,1,1,HAWAII,CAPTAIN COOK,November,12,12,Sunday,2023,2,Rural,19.46868889,-155.8877167,Rollover/Overturn,Dark - Not Lighted,Clear,Acura TSX,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150084,4,3,HONOLULU,HONOLULU,November,21,21,Tuesday,2023,21,Urban,21.32429722,-157.8820667,Motor Vehicle In-Transport,Dark - Lighted,Clear,Yamaha 450-749cc,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150085,1,3,HONOLULU,HONOLULU,December,2,2,Saturday,2023,23,Urban,21.30660833,-157.8503333,Motor Vehicle In-Transport,Dark - Lighted,Clear,Chevrolet Camaro,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+Hawaii,150086,2,2,HONOLULU,HONOLULU,December,3,3,Sunday,2023,17,Urban,21.27482778,-157.6993444,Motor Vehicle In-Transport,Dusk,Clear,Kawasaki 750cc or greater,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150087,2,1,HONOLULU,MAKAHA,December,4,4,Monday,2023,14,Urban,21.46561944,-158.2147361,Pedalcyclist,Daylight,Clear,Nissan/Datsun Frontier ,Motor Vehicle In-Transport,"Large Van-Includes van-based buses (B150-B350, Sportsman, Royal Maxiwagon, Ram, Tradesman,...)"
+Hawaii,150088,3,1,MAUI,KAHULUI,December,8,8,Friday,2023,3,Urban,20.86706111,-156.3807306,Embankment,Dark - Not Lighted,Clear,Nissan/Datsun Altima,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150090,2,1,HONOLULU,KANE`OHE,December,31,31,Sunday,2023,21,Urban,21.44130278,-157.8321694,Tree (Standing Only),Dark - Lighted,Clear,Honda 450-749 cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150091,1,3,HONOLULU,KANE`OHE,July,24,24,Monday,2023,15,Urban,21.37712222,-157.7831444,Motor Vehicle In-Transport,Daylight,Not Reported,Ford E-Series Van/Econoline,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150094,1,1,MAUI,KIHEI,July,23,23,Sunday,2023,1,Urban,20.76882778,-156.4588139,Pedestrian,Dark - Not Lighted,Clear,Yamaha 450-749cc,Concrete Traffic Barrier,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150001,1,1,MAUI,Other,January,1,1,Saturday,2022,0,Urban,20.92930278,-156.6900667,Pedestrian,Dark - Lighted,Cloudy,Toyota Matrix,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150002,2,1,MAUI,WAILUKU HAWAIIAN HOME LAND (HISTORICAL),January,1,1,Saturday,2022,1,Urban,20.87852222,-156.5076306,Curb,Dark - Not Lighted,Cloudy,Mazda Tribute,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150003,1,1,HONOLULU,HONOLULU,January,14,14,Friday,2022,22,Urban,21.32860556,-157.8864417,Pedestrian,Dark - Lighted,Clear,Toyota Tacoma,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)"
+Hawaii,150004,1,1,HAWAII,Other,January,9,9,Sunday,2022,20,Urban,20.00750833,-155.8140917,Pedestrian,Dark - Not Lighted,Clear,Toyota 4-Runner,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150005,1,1,HAWAII,HILO,January,1,1,Saturday,2022,15,Rural,19.74390278,-155.4498333,Rollover/Overturn,Daylight,Rain,Nissan/Datsun Rogue ,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150006,2,1,HONOLULU,PEARL CITY,January,22,22,Saturday,2022,0,Urban,21.434575,-157.9952667,Pedestrian,Dark - Lighted,Clear,Mazda Miata/MX-5,Rollover/Overturn,Light Pickup
+Hawaii,150007,1,2,MAUI,KIHEI,January,24,24,Monday,2022,8,Urban,20.78843333,-156.4632333,Motor Vehicle In-Transport,Daylight,Clear,Dodge Medium/Heavy - CBE,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150008,1,1,MAUI,Other,January,29,29,Saturday,2022,22,Urban,20.88491667,-156.6850139,Pedalcyclist,Dark - Lighted,Clear,Toyota Camry,Pedalcyclist,Light Pickup
+Hawaii,150009,1,3,HONOLULU,WAIMANALO,January,27,27,Thursday,2022,18,Urban,21.31528611,-157.663125,Motor Vehicle In-Transport,Dark - Not Lighted,Clear,Other Make 0-50cc,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150010,3,1,HONOLULU,HONOLULU,January,29,29,Saturday,2022,1,Urban,21.327125,-157.8853278,Pedalcyclist,Dark - Lighted,Clear,GMC G-series van/Savana,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150011,1,1,HAWAII,CAPTAIN COOK,January,27,27,Thursday,2022,16,Rural,19.29959167,-155.8731611,Embankment,Daylight,Clear,Chrysler PT Cruiser,Pedestrian,"4-door sedan, hardtop"
+Hawaii,150012,3,1,HONOLULU,Other,February,5,5,Saturday,2022,21,Urban,21.56809444,-157.8757,Other Object (not fixed),Dark - Lighted,Clear,Nissan/Datsun Frontier,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150013,1,1,HONOLULU,KANE`OHE,February,10,10,Thursday,2022,22,Urban,21.37986667,-157.8114194,Curb,Dark - Not Lighted,Clear,Hyundai Santa Fe,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150014,6,3,HAWAII,Other,January,30,30,Sunday,2022,19,Rural,19.50485278,-155.1421056,Motor Vehicle In-Transport,Dark - Not Lighted,Cloudy,Mazda CX-9,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150015,1,2,MAUI,KAHULUI,February,13,13,Sunday,2022,4,Urban,20.83398611,-156.4657111,Motor Vehicle In-Transport,Dark - Not Lighted,Rain,Yamaha 450-749cc,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150016,2,2,HONOLULU,KANE`OHE,February,20,20,Sunday,2022,16,Urban,21.38925556,-157.7944611,Motor Vehicle In-Transport,Daylight,Clear,Gillig Other (bus),Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150017,1,2,HONOLULU,KAHUKU,February,12,12,Saturday,2022,21,Urban,21.673675,-157.9430028,Motor Vehicle In-Transport,Daylight,Clear,Chevrolet Fullsize Blazer/Tahoe,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150018,1,1,HONOLULU,HONOLULU,February,18,18,Friday,2022,17,Urban,21.31599167,-157.8680611,Pedalcyclist,Daylight,Cloudy,Other Make 750cc or greater,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150019,1,1,MAUI,PUKALANI,February,24,24,Thursday,2022,4,Urban,20.82900833,-156.3300944,Tree (Standing Only),Dark - Lighted,Clear,KIA Sedona,Pedestrian,Unknown body type
+Hawaii,150020,1,1,HAWAII,CAPTAIN COOK,February,24,24,Thursday,2022,9,Trafficway Not in State Inventory,19.44130278,-155.8793833,"Cargo/Equipment Loss, Shift, or Damage [harmful]",Daylight,Clear,Ford F-Series pickup,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)"
+Hawaii,150021,2,6,HONOLULU,NANAKULI,February,26,26,Saturday,2022,22,Urban,21.38775833,-158.1362778,Parked Motor Vehicle,Dark - Lighted,Clear,Ford Mustang/Mustang II,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150022,1,1,HAWAII,NINOLE,February,5,5,Saturday,2022,9,Rural,19.9272,-155.1560694,Bridge Pier or Support,Daylight,Cloudy,Unknown Make Unknown cc,Motor Vehicle In-Transport,"2-door sedan,hardtop,coupe"
+Hawaii,150023,1,1,HONOLULU,HONOLULU,February,27,27,Sunday,2022,21,Urban,21.29718333,-157.8369389,Pedestrian,Dark - Lighted,Clear,Ford F-Series pickup,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150024,1,2,HONOLULU,WAIPAHU,March,2,2,Wednesday,2022,12,Urban,21.38367778,-158.0056556,Motor Vehicle In-Transport,Daylight,Clear,Ford F-Series pickup,Motor Vehicle In-Transport,"2-door sedan,hardtop,coupe"
+Hawaii,150025,1,1,HONOLULU,HONOLULU,March,2,2,Wednesday,2022,22,Urban,21.33699167,-157.9114889,Pedestrian,Dark - Lighted,Clear,Dodge Ram Pickup,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150026,3,1,HONOLULU,WAIMANALO,March,13,13,Sunday,2022,2,Urban,21.36883056,-157.7367722,Utility Pole/Light Support,Dark - Lighted,Clear,Toyota Matrix,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150027,1,1,HAWAII,HILO,March,8,8,Tuesday,2022,16,Urban,19.68094722,-155.1522,Rollover/Overturn,Daylight,Rain,Ford Ranger,Fell/Jumped from Vehicle,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150028,4,2,HONOLULU,WAIPAHU,March,20,20,Sunday,2022,17,Urban,21.39316111,-158.0003361,Pedalcyclist,Daylight,Clear,Nissan/Datsun Frontier ,Utility Pole/Light Support,Light Pickup
+Hawaii,150029,2,1,HAWAII,CAPTAIN COOK,March,25,25,Friday,2022,22,Urban,19.49581667,-155.9186778,Guardrail Face,Dark - Lighted,Clear,Toyota RAV4 ,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150030,2,2,MAUI,KIHEI,April,3,3,Sunday,2022,4,Urban,20.79230278,-156.4792694,Parked Motor Vehicle,Dark - Not Lighted,Severe Crosswinds,Other Make Unknown cc,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150031,1,1,HAWAII,Other,March,31,31,Thursday,2022,21,Rural,19.83823333,-155.7770083,Embankment,Dark - Not Lighted,Cloudy,"Chevrolet C, K, R, V-series pickup/Silverado",Pedestrian,"4-door sedan, hardtop"
+Hawaii,150032,1,1,HAWAII,HILO,March,17,17,Thursday,2022,2,Urban,19.72678611,-155.0865167,Pedalcyclist,Dark - Not Lighted,Clear,Honda Ridgeline,"Post, Pole or Other Supports","Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150033,1,1,MAUI,WAILUKU HAWAIIAN HOME LAND (HISTORICAL),April,14,14,Thursday,2022,20,Urban,20.86882778,-156.5029,Pedestrian,Dark - Not Lighted,Clear,Toyota Tacoma,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150034,1,2,HAWAII,VOLCANO,April,19,19,Tuesday,2022,7,Rural,19.42900278,-155.2530694,Motor Vehicle In-Transport,Daylight,Clear,Pontiac Grand Prix (FWD),Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150035,2,1,HONOLULU,Other,April,20,20,Wednesday,2022,2,Urban,21.60646944,-157.9041111,Pedestrian,Dark - Lighted,Clear,Toyota Corolla,Fire/Explosion,Single-unit straight truck or Cab-Chassis
+Hawaii,150036,1,1,HONOLULU,HONOLULU,April,23,23,Saturday,2022,9,Urban,21.32053889,-157.8611556,Pedestrian,Daylight,Rain,Other Make Sterling,Pedestrian,"2-door sedan,hardtop,coupe"
+Hawaii,150037,1,3,MAUI,WAILUKU HAWAIIAN HOME LAND (HISTORICAL),April,24,24,Sunday,2022,5,Urban,20.84525556,-156.5056,Motor Vehicle In-Transport,Dark - Not Lighted,Clear,Ford F-Series pickup,Pedestrian,Light Pickup
+Hawaii,150038,1,3,HAWAII,KAILUA KONA,May,2,2,Monday,2022,12,Urban,19.67355278,-155.9797722,Motor Vehicle In-Transport,Daylight,Cloudy,Toyota Corolla,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150039,2,2,HAWAII,WAIKOLOA VILLAGE,May,9,9,Monday,2022,1,Urban,19.916725,-155.8674944,Motor Vehicle In-Transport,Dark - Not Lighted,Clear,Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150040,2,1,HONOLULU,WAHIAWA,May,22,22,Sunday,2022,15,Urban,21.51651389,-158.0536556,Ditch,Daylight,Clear,Honda Accord,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150042,1,3,HONOLULU,HALE`IWA,May,24,24,Tuesday,2022,17,Urban,21.58106111,-158.1051417,Motor Vehicle In-Transport,Daylight,Clear,Peterbilt Medium/Heavy - CBE,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150043,2,3,HONOLULU,KA`A`AWA,May,29,29,Sunday,2022,13,Urban,21.53976667,-157.8413778,Motor Vehicle In-Transport,Daylight,Cloudy,Harley-Davidson 750cc or greater,Pedestrian,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)"
+Hawaii,150044,1,2,HONOLULU,KAPOLEI,May,30,30,Monday,2022,4,Urban,21.30941944,-158.1031583,Parked Motor Vehicle,Dark - Lighted,Clear,Toyota Tacoma,Embankment,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150045,2,2,HONOLULU,HONOLULU,May,29,29,Sunday,2022,17,Urban,21.28951389,-157.8297028,Motor Vehicle In-Transport,Daylight,Clear,Honda 450-749 cc,Concrete Traffic Barrier,"4-door sedan, hardtop"
+Hawaii,150046,1,2,HAWAII,HILO,May,11,11,Wednesday,2022,7,Urban,19.71545278,-155.0838472,Pedestrian,Daylight,Clear,Toyota 4-Runner,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150047,4,1,HAWAII,HILO,May,21,21,Saturday,2022,21,Urban,19.68481944,-155.0655889,Fell/Jumped from Vehicle,Dark - Lighted,Cloudy,Jeep / Kaiser-Jeep / Willys- Jeep YJ series/Wrangler,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150048,2,2,MAUI,KAHULUI,June,17,17,Friday,2022,20,Urban,20.88982778,-156.4716722,Pedestrian,Dark - Not Lighted,Clear,Volvo 70 Series,Pedestrian,Unknown body type
+Hawaii,150049,1,1,MAUI,KAHULUI,May,26,26,Thursday,2022,5,Urban,20.88045,-156.4420111,Pedestrian,Dawn,Clear,Honda 750 cc or greater,Pedestrian,Station Wagon (excluding van and truck based)
+Hawaii,150050,1,1,HONOLULU,HONOLULU,June,19,19,Sunday,2022,0,Urban,21.33411389,-157.8720167,Pedestrian,Dark - Lighted,Clear,Nissan/Datsun Rogue ,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150051,1,2,HAWAII,PEPEEKEO,June,18,18,Saturday,2022,15,Rural,19.82750278,-155.1042806,Motor Vehicle In-Transport,Daylight,Clear,Mercedes-Benz E Class,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150052,1,2,HAWAII,HILO,June,13,13,Monday,2022,7,Urban,19.73963333,-155.0911528,Motor Vehicle In-Transport,Daylight,Clear,Toyota Tacoma,Wall,5-door/4-door hatchback
+Hawaii,150053,1,1,KAUAI,HANAMA`ULU,January,2,2,Sunday,2022,17,Urban,21.99350278,-159.343225,Rollover/Overturn,Dark - Not Lighted,Cloudy,Toyota 4-Runner,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150054,1,2,KAUAI,KAPA`A,January,23,23,Sunday,2022,18,Urban,22.07306944,-159.3193444,Motor Vehicle In-Transport,Dark - Lighted,Cloudy,"Chevrolet C, K, R, V-series pickup/Silverado",Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150055,1,1,KAUAI,WAILUA HAWAIIAN HOME LAND,March,14,14,Monday,2022,13,Urban,22.05916111,-159.3659306,Rollover/Overturn,Daylight,Clear,Jeep / Kaiser-Jeep / Willys- Jeep Grand Cherokee ,Pedestrian,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+Hawaii,150056,1,4,KAUAI,ANAHOLA,April,15,15,Friday,2022,12,Urban,22.16020278,-159.3173806,Motor Vehicle In-Transport,Daylight,Cloudy,Honda Pilot,Motor Vehicle In-Transport,"2-door sedan,hardtop,coupe"
+Hawaii,150057,1,3,KAUAI,KOLOA,May,18,18,Wednesday,2022,15,Rural,21.95021111,-159.465,Motor Vehicle In-Transport,Daylight,Rain,Jeep / Kaiser-Jeep / Willys- Jeep YJ series/Wrangler,Motor Vehicle In-Transport,Moped
+Hawaii,150058,4,2,MAUI,WAILUKU HAWAIIAN HOME LAND (HISTORICAL),July,8,8,Friday,2022,17,Urban,20.87046389,-156.4976444,Fell/Jumped from Vehicle,Daylight,Clear,"GMC C, K, R, V-series pickup/Sierra",Curb,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150059,3,1,HONOLULU,HONOLULU,July,17,17,Sunday,2022,9,Urban,21.36051389,-157.8996694,Concrete Traffic Barrier,Daylight,Clear,Ford Edge,Rollover/Overturn,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150060,1,3,HAWAII,KEALAKEKUA,June,15,15,Wednesday,2022,9,Urban,19.54159722,-155.9290389,Motor Vehicle In-Transport,Daylight,Clear,Dodge Ram Pickup,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150061,2,2,HAWAII,KAILUA KONA,July,14,14,Thursday,2022,21,Urban,19.71097222,-155.9774194,Motor Vehicle In-Transport,Dark - Unknown Lighting,Clear,Toyota Corolla,Motor Vehicle In-Transport,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)"
+Hawaii,150062,3,1,KAUAI,WAILUA HAWAIIAN HOME LAND,July,13,13,Wednesday,2022,2,Urban,22.04959167,-159.3424278,Rollover/Overturn,Dark - Not Lighted,Rain,Lexus RX330/350/400h/450h,Pedestrian,Light Pickup
+Hawaii,150063,1,1,HAWAII,KAILUA KONA,July,24,24,Sunday,2022,4,Urban,19.60761111,-155.9642056,Pedestrian,Dark - Not Lighted,Clear,Mazda Pickup/ B-Series Pickup,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150064,1,1,HONOLULU,HONOLULU,July,26,26,Tuesday,2022,15,Urban,21.31360556,-157.8680361,Pedalcyclist,Daylight,Clear,Other Make Unknown cc,Utility Pole/Light Support,Light Pickup
+Hawaii,150065,1,2,MAUI,WAI`EHU HAWAIIAN HOME LAND,July,31,31,Sunday,2022,9,Urban,20.92061111,-156.4989833,Motor Vehicle In-Transport,Daylight,Clear,Toyota Tacoma,Tree (Standing Only),"4-door sedan, hardtop"
+Hawaii,150066,1,1,HAWAII,KAILUA KONA,June,14,14,Tuesday,2022,17,Urban,19.64679444,-155.9947833,Pedestrian,Daylight,Clear,Toyota Highlander,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150067,2,4,HAWAII,HONOMU,July,4,4,Monday,2022,20,Rural,19.87283333,-155.1081972,Motor Vehicle In-Transport,Dark - Not Lighted,Cloudy,Toyota T-100,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150068,1,1,HAWAII,PA`AUILO,July,22,22,Friday,2022,11,Urban,19.81837222,-155.6341778,"Post, Pole or Other Supports",Daylight,Clear,Mercedes-Benz GLK Class,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150070,2,2,HONOLULU,WAI`ANAE,August,7,7,Sunday,2022,10,Urban,21.44603889,-158.1882972,Motor Vehicle In-Transport,Daylight,Clear,Toyota Tacoma,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150071,1,1,HONOLULU,WAIPI`O ACRES,August,6,6,Saturday,2022,4,Urban,21.43904722,-157.9947833,Pedestrian,Dark - Lighted,Clear,Toyota Tacoma,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150072,1,2,HONOLULU,WAI`ANAE,August,7,7,Sunday,2022,21,Urban,21.44269444,-158.1871194,Motor Vehicle In-Transport,Dark - Lighted,Clear,Toyota RAV4 *,Pedestrian,Unknown body type
+Hawaii,150073,3,3,HAWAII,PEPEEKEO,August,1,1,Monday,2022,18,Rural,19.85700278,-155.0996972,Motor Vehicle In-Transport,Daylight,Cloudy,Toyota Tacoma,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150074,2,2,HONOLULU,LA`IE,August,22,22,Monday,2022,13,Urban,21.66226944,-157.9347778,Motor Vehicle In-Transport,Daylight,Clear,Suzuki 450-749cc,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150075,1,1,HONOLULU,KANE`OHE,August,20,20,Saturday,2022,23,Urban,21.37545833,-157.7804583,Fell/Jumped from Vehicle,Dark - Lighted,Clear,Honda Element,Pedestrian,3-door/2-door hatchback
+Hawaii,150076,1,1,MAUI,WAILUKU HAWAIIAN HOME LAND (HISTORICAL),August,26,26,Friday,2022,16,Urban,20.85266389,-156.4990333,Utility Pole/Light Support,Daylight,Clear,Toyota Sienna,Guardrail Face,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150077,1,2,HONOLULU,KUNIA CAMP,September,1,1,Thursday,2022,6,Urban,21.46296667,-158.0559806,Motor Vehicle In-Transport,Daylight,Clear,Infiniti QX4,Guardrail Face,"4-door sedan, hardtop"
+Hawaii,150078,1,1,HONOLULU,KAILUA,September,3,3,Saturday,2022,5,Urban,21.408975,-157.7555556,Pedestrian,Dark - Lighted,Rain,Yamaha 750cc or greater,Pedalcyclist,Light Pickup
+Hawaii,150080,1,1,HONOLULU,`AIEA,September,14,14,Wednesday,2022,14,Urban,21.37856389,-157.93615,"Post, Pole or Other Supports",Daylight,Clear,Toyota Tundra,Utility Pole/Light Support,3-door/2-door hatchback
+Hawaii,150081,1,2,HONOLULU,MILILANI TOWN,September,6,6,Tuesday,2022,12,Urban,21.45280833,-158.0085889,Motor Vehicle In-Transport,Daylight,Clear,Toyota Highlander,Pedestrian,Light Pickup
+Hawaii,150082,1,1,HONOLULU,KAILUA,August,24,24,Wednesday,2022,20,Urban,21.38146111,-157.7572694,Fire/Explosion,Dark - Lighted,Clear,Toyota Tacoma,Pedestrian,"4-door sedan, hardtop"
+Hawaii,150083,1,1,KAUAI,PRINCEVILLE,September,12,12,Monday,2022,19,Rural,22.20864722,-159.464275,Pedestrian,Dark - Not Lighted,Rain,Honda Accord  ,Rollover/Overturn,Recreational Off-Highway Vehicle
+Hawaii,150084,1,1,KAUAI,KAPA`A,September,19,19,Monday,2022,19,Urban,22.08174444,-159.3129778,Pedestrian,Dark - Lighted,Cloudy,Chrysler Pacifica,Parked Motor Vehicle,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+Hawaii,150085,2,2,MAUI,Other,September,30,30,Friday,2022,20,Urban,20.774325,-156.3258528,Motor Vehicle In-Transport,Dark - Lighted,Clear,Toyota 4-Runner,Tree (Standing Only),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150086,3,2,HAWAII,KAILUA KONA,September,28,28,Wednesday,2022,18,Urban,19.67318056,-155.9842611,Motor Vehicle In-Transport,Dark - Lighted,Clear,Isuzu Medium/Heavy,Rollover/Overturn,"2-door sedan,hardtop,coupe"
+Hawaii,150087,1,1,HAWAII,HILO,August,24,24,Wednesday,2022,6,Urban,19.69311944,-155.1030722,Pedestrian,Daylight,Clear,Yamaha 750cc or greater,Pedalcyclist,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)"
+Hawaii,150088,1,1,HONOLULU,WAHIAWA,October,15,15,Saturday,2022,99,Urban,21.49980556,-158.0516639,Embankment,Reported as Unknown,Clear,"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,3-door/2-door hatchback
+Hawaii,150089,1,1,MAUI,Other,November,2,2,Wednesday,2022,0,Urban,20.88541111,-156.6684556,Concrete Traffic Barrier,Dark - Lighted,Clear,Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150090,1,2,HONOLULU,NANAKULI,November,2,2,Wednesday,2022,4,Urban,21.37148611,-158.1370583,Motor Vehicle In-Transport,Dark - Not Lighted,Clear,Dodge Caravan/Grand Caravan,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150091,3,1,HONOLULU,HONOLULU,November,2,2,Wednesday,2022,21,Urban,21.333625,-157.8910917,Pedestrian,Dark - Not Lighted,Clear,Honda 0- 50 cc,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150092,1,1,HONOLULU,HONOLULU,November,5,5,Saturday,2022,0,Urban,21.29515833,-157.8580639,Pedestrian,Dark - Lighted,Clear,KIA Soul,Utility Pole/Light Support,Motor Scooter
+Hawaii,150094,3,2,HAWAII,HILO,October,16,16,Sunday,2022,16,Urban,19.70584722,-155.0645806,Motor Vehicle In-Transport,Daylight,Cloudy,Freightliner Medium/Heavy - CBE,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+Hawaii,150095,1,1,HAWAII,PAHOA,October,19,19,Wednesday,2022,22,Urban,19.5605,-154.8883139,Wall,Dark - Not Lighted,Cloudy,Honda 0- 50 cc,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150096,3,2,HAWAII,HILO,October,28,28,Friday,2022,18,Urban,19.67975556,-155.0671139,Motor Vehicle In-Transport,Dusk,Clear,Mazda Mazda5,Fire/Explosion,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+Hawaii,150097,1,1,HAWAII,KEA`AU,November,4,4,Friday,2022,20,Rural,19.62016667,-155.0427222,Pedestrian,Dark - Not Lighted,Rain,Ford Bronco (thru 1977 ),Pedestrian,Light Pickup
+Hawaii,150098,4,2,HONOLULU,WAIMANALO,November,5,5,Saturday,2022,19,Urban,21.32415833,-157.6795778,Motor Vehicle In-Transport,Dark - Lighted,Clear,Yamaha 750cc or greater,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150099,1,1,HONOLULU,WAHIAWA,November,8,8,Tuesday,2022,21,Urban,21.49446389,-158.0502917,Curb,Dark - Lighted,Clear,Toyota Tacoma,Motor Vehicle In-Transport,Light Pickup
+Hawaii,150100,3,1,HONOLULU,KAPOLEI,November,9,9,Wednesday,2022,13,Urban,21.37120556,-158.0547333,Concrete Traffic Barrier,Daylight,Clear,Honda Accord,Wall,"4-door sedan, hardtop"
+Hawaii,150101,1,2,HONOLULU,Other,November,9,9,Wednesday,2022,14,Urban,21.32816389,-158.0382361,Motor Vehicle In-Transport,Daylight,Clear,"Honda Civic/CRX, del Sol",Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150102,2,1,HONOLULU,HONOLULU,November,12,12,Saturday,2022,22,Urban,21.32441667,-157.8821472,Pedestrian,Dark - Lighted,Rain,Toyota Matrix,Motor Vehicle In-Transport,Motor Scooter
+Hawaii,150103,1,1,HONOLULU,KAILUA,November,16,16,Wednesday,2022,18,Urban,21.36241389,-157.736325,Pedestrian,Dusk,Clear,Dodge Ram Pickup,Fell/Jumped from Vehicle,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)"
+Hawaii,150104,2,1,HONOLULU,`EWA BEACH,November,21,21,Monday,2022,19,Urban,21.33994444,-158.0374833,Curb,Dark - Lighted,Clear,Toyota Tacoma,Wall,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150105,2,1,HONOLULU,HONOLULU,November,25,25,Friday,2022,8,Urban,21.27758056,-157.8209333,Curb,Daylight,Clear,Honda Accord,Guardrail Face,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150106,1,1,HONOLULU,`EWA BEACH,December,2,2,Friday,2022,5,Urban,21.37234722,-158.0259861,Pedestrian,Dark - Lighted,Clear,Harley-Davidson 750cc or greater,Tree (Standing Only),Light Pickup
+Hawaii,150107,1,2,HONOLULU,HALE`IWA,December,8,8,Thursday,2022,23,Urban,21.62671111,-158.0744833,Motor Vehicle In-Transport,Dark - Lighted,Clear,Ford Escape,Pedestrian,Light Pickup
+Hawaii,150108,1,2,HONOLULU,HONOLULU,November,25,25,Friday,2022,14,Urban,21.30079444,-157.8411306,Motor Vehicle In-Transport,Daylight,Clear,Toyota Tacoma,Pedestrian,"Utility Vehicle, Unknown body type"
+Hawaii,150109,1,1,HONOLULU,WAIPAHU,November,26,26,Saturday,2022,18,Urban,21.38543056,-158.0031528,Pedestrian,Dark - Lighted,Clear,Yamaha 0-50cc,Pedestrian,Not Reported
+Hawaii,150110,2,2,MAUI,KAHULUI,December,13,13,Tuesday,2022,6,Urban,20.89385556,-156.4779028,Motor Vehicle In-Transport,Dawn,Cloudy,Honda Accord,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+Hawaii,150111,1,1,HONOLULU,HONOLULU,December,16,16,Friday,2022,20,Urban,21.32121667,-157.8667278,Pedestrian,Dark - Lighted,Cloudy,"Chevrolet C, K, R, V-series pickup/Silverado",Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150112,1,1,HONOLULU,KANE`OHE,December,22,22,Thursday,2022,14,Urban,21.45183056,-157.8231417,Guardrail Face,Daylight,Clear,"Chevrolet C, K, R, V-series pickup/Silverado",Concrete Traffic Barrier,"4-door sedan, hardtop"
+Hawaii,150113,1,1,HONOLULU,HONOLULU,December,26,26,Monday,2022,19,Urban,21.27304722,-157.6888111,Guardrail Face,Dark - Not Lighted,Clear,Ford Edge ,Guardrail Face,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150114,1,2,KAUAI,LIHU`E,November,22,22,Tuesday,2022,20,Urban,21.97071389,-159.3627083,Pedalcyclist,Dark - Lighted,Cloudy,Nissan/Datsun Frontier ,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+Hawaii,150115,1,1,HAWAII,HILO,December,17,17,Saturday,2022,9,Urban,19.65756111,-155.0561222,Guardrail Face,Daylight,Clear,Mercedes-Benz SPRINTER,Motor Vehicle In-Transport,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+,,,,,,,,,,,,,,,,,,Toyota Tacoma,Embankment,Light Pickup
+,,,,,,,,,,,,,,,,,,Kawasaki 450-749cc,Curb,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Other Domestic Manufacturers Tesla,Pedalcyclist,Light Pickup
+,,,,,,,,,,,,,,,,,,Yamaha 450-749cc,Pedestrian,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Toyota 4-Runner,Curb,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Honda 750 cc or greater,Fell/Jumped from Vehicle,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,KIA Sedona,Pedestrian,Light Pickup
+,,,,,,,,,,,,,,,,,,Nissan/Datsun Rogue,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Nissan/Datsun Versa,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,KIA Niro,Pedalcyclist,Light Pickup
+,,,,,,,,,,,,,,,,,,"GMC C, K, R, V-series pickup/Sierra","Post, Pole or Other Supports",Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Other Make 0-50cc,Traffic Signal Support,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Harley-Davidson 750cc or greater,Pedestrian,Light Pickup
+,,,,,,,,,,,,,,,,,,Mercury Milan,Embankment,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Harley-Davidson 750cc or greater,Pedalcyclist,Light Pickup
+,,,,,,,,,,,,,,,,,,Honda HR-V,"Post, Pole or Other Supports","Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Honda Accord ,Pedestrian,Light Pickup
+,,,,,,,,,,,,,,,,,,Jeep / Kaiser-Jeep / Willys- Jeep Cherokee,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,Toyota 4-Runner,Motor Vehicle In-Transport,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Honda Accord ,Rollover/Overturn,Motor Scooter
+,,,,,,,,,,,,,,,,,,Other Make 125-349cc,Pedalcyclist,Light Pickup
+,,,,,,,,,,,,,,,,,,Mazda MPV,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Toyota Tundra,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+,,,,,,,,,,,,,,,,,,"Honda Civic/CRX, del Sol",Pedalcyclist,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Chevrolet S-10/T-10 Pickup,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Toyota Solara,Motor Vehicle In-Transport,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Ford Ranger,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,Hyundai Elantra,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,Harley-Davidson 750cc or greater,Parked Motor Vehicle,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Toyota Tacoma,Curb,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Toyota Tacoma,Utility Pole/Light Support,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Jaguar XF/XFR,Pedestrian,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+,,,,,,,,,,,,,,,,,,Toyota Camry,Pedestrian,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Honda CR-V,Tree (Standing Only),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Other Make 0-50cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Toyota 4-Runner,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,Ford Medium/Heavy,Other Object (not fixed),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Honda Accord,Wall,"Convertible(excludes sun-roof,t-bar)"
+,,,,,,,,,,,,,,,,,,"Chevrolet C, K, R, V-series pickup/Silverado",Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Nissan/Datsun Frontier,Motor Vehicle In-Transport,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+,,,,,,,,,,,,,,,,,,Yamaha 125-349cc,Motor Vehicle In-Transport,5-door/4-door hatchback
+,,,,,,,,,,,,,,,,,,Toyota 4-Runner,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,Honda 125-349 cc,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Ford Medium/Heavy ,Utility Pole/Light Support,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Yamaha 750cc or greater,Tree (Standing Only),"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Toyota Corolla,Utility Pole/Light Support,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Kawasaki 450-749cc,Pedestrian,"2-door sedan,hardtop,coupe"
+,,,,,,,,,,,,,,,,,,Dodge Ram Pickup,"Motor Vehicle In-Transport Strikes or is Struck by Cargo, Persons or Objects Set-in-Motion from/by Another Motor Vehicle In Transport",Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Toyota Scion xB ,"Motor Vehicle In-Transport Strikes or is Struck by Cargo, Persons or Objects Set-in-Motion from/by Another Motor Vehicle In Transport",Light Pickup
+,,,,,,,,,,,,,,,,,,Honda 750 cc or greater,Rollover/Overturn,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Toyota Tacoma,Fire Hydrant,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Mazda Mazda2,Pedestrian,"Large Van-Includes van-based buses (B150-B350, Sportsman, Royal Maxiwagon, Ram, Tradesman,...)"
+,,,,,,,,,,,,,,,,,,Honda 125-349 cc,Tree (Standing Only),Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Other Make 750cc or greater,Ground,Station Wagon (excluding van and truck based)
+,,,,,,,,,,,,,,,,,,Honda Pilot,Other Fixed Object,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,BMW 3-series,Pedalcyclist,Light Pickup
+,,,,,,,,,,,,,,,,,,Other Make Unknown cc,Tree (Standing Only),"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Harley-Davidson 750cc or greater,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+,,,,,,,,,,,,,,,,,,Mercedes-Benz M/ML Class,Motor Vehicle In-Transport,"Convertible(excludes sun-roof,t-bar)"
+,,,,,,,,,,,,,,,,,,Honda 450-749 cc,Pedestrian,"Single-unit straight truck or Cab-Chassis (GVWR range 10,001 to 19,500 lbs.)"
+,,,,,,,,,,,,,,,,,,Ford Medium/Heavy Van-Based Vehicle,Pedestrian,"4-door sedan, hardtop"
+,,,,,,,,,,,,,,,,,,Nissan/Datsun Frontier,Motor Vehicle In-Transport,Motor Scooter
+,,,,,,,,,,,,,,,,,,Honda Element,Motor Vehicle In-Transport,"Large Van-Includes van-based buses (B150-B350, Sportsman, Royal Maxiwagon, Ram, Tradesman,...)"
+,,,,,,,,,,,,,,,,,,Honda Unknown,Pedestrian,Station Wagon (excluding van and truck based)
+,,,,,,,,,,,,,,,,,,Volkswagen Jetta/Jetta SportsWagen,Pedestrian,Light Pickup
+,,,,,,,,,,,,,,,,,,Subaru Forester,Utility Pole/Light Support,"Compact Utility (Utility Vehicle Categories ""Small"" and ""Midsize"")"
+,,,,,,,,,,,,,,,,,,Ford F-Series pickup,Fire/Explosion,Station Wagon (excluding van and truck based)
+,,,,,,,,,,,,,,,,,,Nissan/Datsun Altima,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Other Make 0-50cc,Motor Vehicle In-Transport,Transit Bus (City Bus)
+,,,,,,,,,,,,,,,,,,BMW 3-series,Motor Vehicle In-Transport,"Large utility (ANSI D16.1 Utility Vehicle Categories and ""Full Size"" and ""Large"")"
+,,,,,,,,,,,,,,,,,,Toyota Tacoma,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Dodge Ram Pickup,Motor Vehicle In-Transport,"Minivan (Chrysler Town and Country, Caravan, Grand Caravan, Voyager, Voyager, Honda-Odyssey, ...)"
+,,,,,,,,,,,,,,,,,,Chevrolet Corvette,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,BMW 125-349cc,Motor Vehicle In-Transport,"Convertible(excludes sun-roof,t-bar)"
+,,,,,,,,,,,,,,,,,,Toyota Corolla,Motor Vehicle In-Transport,Two Wheel Motorcycle (excluding motor scooters)
+,,,,,,,,,,,,,,,,,,Toyota Tundra,Pedalcyclist,Light Pickup
+,,,,,,,,,,,,,,,,,,Mazda 323/GLC,Embankment,Light Pickup
+,,,,,,,,,,,,,,,,,,,Tree (Standing Only),Light Pickup
+,,,,,,,,,,,,,,,,,,,Motor Vehicle In-Transport,Station Wagon (excluding van and truck based)
+,,,,,,,,,,,,,,,,,,,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,,Motor Vehicle In-Transport,Light Pickup
+,,,,,,,,,,,,,,,,,,,Pedestrian,
