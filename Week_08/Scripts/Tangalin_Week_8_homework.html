@@ -76,10 +76,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#r-packages-we-need" id="toc-r-packages-we-need" class="nav-link" data-scroll-target="#r-packages-we-need"><span class="header-section-number">2</span> R Packages We Need</a></li>
+  <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view"><span class="header-section-number">3</span> View</a></li>
+  <li><a href="#lolipop-good-with-taco" id="toc-lolipop-good-with-taco" class="nav-link" data-scroll-target="#lolipop-good-with-taco"><span class="header-section-number">4</span> Lolipop Good with Taco</a></li>
+  <li><a href="#view-output" id="toc-view-output" class="nav-link" data-scroll-target="#view-output"><span class="header-section-number">5</span> View Output</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Tangalin_Week_8_homework.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -113,12 +125,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Today we mapping fatal vehicle accidents in Hawaii in 2022 and 2023</p>
 <hr>
-<section id="r-packages-we-need" class="level2">
-<h2 class="anchored" data-anchor-id="r-packages-we-need">R Packages We Need</h2>
+</section>
+<section id="r-packages-we-need" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="r-packages-we-need"><span class="header-section-number">2</span> R Packages We Need</h2>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
@@ -605,56 +618,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Overlay radial chart on map (shifted mms by trial and error)</span></span>
 <span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>combined_plot <span class="ot">&lt;-</span> <span class="fu">ggdraw</span>()<span class="sc">+</span> <span class="co">#going to combine</span></span>
 <span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(map_plot) <span class="sc">+</span> <span class="co">#add map </span></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(radial_plot, <span class="at">x =</span> <span class="sc">-</span><span class="fl">0.08</span>, <span class="at">y =</span> <span class="fl">0.24</span>, <span class="at">width =</span> <span class="fl">0.46</span>, <span class="at">height =</span> <span class="fl">0.46</span>) <span class="co">#add polar, trial and error on moving it</span></span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Output"</span>, <span class="st">"hawaii_accidents_overlay.png"</span>),</span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> combined_plot, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">8</span>, <span class="at">dpi =</span> <span class="dv">300</span>) <span class="co">#save</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(radial_plot, <span class="at">x =</span> <span class="sc">-</span><span class="fl">0.08</span>, <span class="at">y =</span> <span class="fl">0.24</span>, <span class="at">width =</span> <span class="fl">0.46</span>, <span class="at">height =</span> <span class="fl">0.46</span>) <span class="co">#add polar, trial and error on moving it</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="lolipop-good-with-taco" class="level2">
-<h2 class="anchored" data-anchor-id="lolipop-good-with-taco">Lolipop Good with Taco</h2>
+<section id="view" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="view"><span class="header-section-number">3</span> View</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lollipop_plot <span class="ot">&lt;-</span> Make <span class="sc">%&gt;%</span> <span class="co">#pipe to Make data</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Vehicle_Make)) <span class="sc">%&gt;%</span> <span class="co">#remove NAs and clean data by combining motorcycles by class size</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Vehicle_Make =</span> <span class="fu">case_when</span>( </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Other Make 0-50cc"</span>, <span class="st">"Honda 0- 50 cc"</span>, <span class="st">"Moped"</span>) <span class="sc">~</span> <span class="st">"Moped"</span>, </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Harley-Davidson 750cc or greater"</span>, <span class="st">"Yamaha 750cc or greater"</span>, <span class="st">"Honda 750 cc or greater"</span>) <span class="sc">~</span> <span class="st">"Motorcycle Harley-Davidson/Yamaha/Honda 750+"</span>,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Yamaha 450-749cc"</span>, <span class="st">"Honda 450-749 cc"</span>) <span class="sc">~</span> <span class="st">"Yamaha/Honda 450-749cc"</span>,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Other Make Unknown"</span>, <span class="st">"Other Make Unknown cc"</span>) <span class="sc">~</span> <span class="cn">NA_character_</span>, <span class="co">#remove unkown</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> Vehicle_Make <span class="co">#do not change other makes</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Vehicle_Make)) <span class="sc">%&gt;%</span> <span class="co">#remove NA rows</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Vehicle_Make) <span class="sc">%&gt;%</span> <span class="co">#count fatal accidents per vechile type</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> n, <span class="at">n =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="co">#keep top 20</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Vehicle_Make, n), <span class="at">y =</span> n)) <span class="sc">+</span> <span class="co">#make plot with top 20 highest to lowest</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co">#red dot at count total</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> Vehicle_Make, <span class="at">xend =</span> Vehicle_Make, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> n),</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co">#lolipop look with  - -  line</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 20 Vehicle Makes in Fatal Accidents"</span>, <span class="co"># titles</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Hawai‘i 2022–2023"</span>,</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="co">#remove X label</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of Fatalities"</span>,</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Hawai‘i Fatal Accident Data"</span>) <span class="sc">+</span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co">#flip to side for easy read</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>), <span class="co">#trying to make bigger, but not working</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>), <span class="co">#also not working, sould be 16 looks 12</span></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">20</span>), <span class="co">#center, size still small</span></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">16</span>)</span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#add tacoma image with magick package</span></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>tacoma_img <span class="ot">&lt;-</span> <span class="fu">image_read</span>(<span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Data"</span>, <span class="st">"Tacoma.jpeg"</span>))</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>tacoma_plot <span class="ot">&lt;-</span> <span class="fu">ggdraw</span>() <span class="sc">+</span> <span class="fu">draw_image</span>(tacoma_img) <span class="co">#using cowplot to make it layerable with ggplot</span></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">ggdraw</span>() <span class="sc">+</span> <span class="co">#ggdraw makes new combo</span></span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(lollipop_plot) <span class="sc">+</span> <span class="co">#lolipop is baslayer</span></span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(tacoma_plot, <span class="at">x =</span> <span class="fl">0.55</span>, <span class="at">y =</span> <span class="fl">0.05</span>, <span class="at">width =</span> <span class="fl">0.40</span>, <span class="at">height =</span> <span class="fl">0.40</span>) <span class="co"># trial and error y adding moves left</span></span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Output"</span>, <span class="st">"lollipop_with_tacoma_corner.png"</span>),</span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">14</span>, <span class="at">height =</span> <span class="dv">10</span>, <span class="at">dpi =</span> <span class="dv">300</span></span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Output"</span>, <span class="st">"hawaii_accidents_overlay.png"</span>),</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> combined_plot, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">8</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Output"</span>, <span class="st">"hawaii_accidents_overlay.png"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="hawaii_accidents_overlay.png" class="img-fluid figure-img" width="1500"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
+<section id="lolipop-good-with-taco" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="lolipop-good-with-taco"><span class="header-section-number">4</span> Lolipop Good with Taco</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>lollipop_plot <span class="ot">&lt;-</span> Make <span class="sc">%&gt;%</span> <span class="co">#pipe to Make data</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Vehicle_Make)) <span class="sc">%&gt;%</span> <span class="co">#remove NAs and clean data by combining motorcycles by class size</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Vehicle_Make =</span> <span class="fu">case_when</span>( </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Other Make 0-50cc"</span>, <span class="st">"Honda 0- 50 cc"</span>, <span class="st">"Moped"</span>) <span class="sc">~</span> <span class="st">"Moped"</span>, </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Harley-Davidson 750cc or greater"</span>, <span class="st">"Yamaha 750cc or greater"</span>, <span class="st">"Honda 750 cc or greater"</span>) <span class="sc">~</span> <span class="st">"Motorcycle Harley-Davidson/Yamaha/Honda 750+"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Yamaha 450-749cc"</span>, <span class="st">"Honda 450-749 cc"</span>) <span class="sc">~</span> <span class="st">"Yamaha/Honda 450-749cc"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    Vehicle_Make <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Other Make Unknown"</span>, <span class="st">"Other Make Unknown cc"</span>) <span class="sc">~</span> <span class="cn">NA_character_</span>, <span class="co">#remove unkown</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> Vehicle_Make <span class="co">#do not change other makes</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Vehicle_Make)) <span class="sc">%&gt;%</span> <span class="co">#remove NA rows</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Vehicle_Make) <span class="sc">%&gt;%</span> <span class="co">#count fatal accidents per vechile type</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> n, <span class="at">n =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> <span class="co">#keep top 20</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Vehicle_Make, n), <span class="at">y =</span> n)) <span class="sc">+</span> <span class="co">#make plot with top 20 highest to lowest</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="co">#red dot at count total</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> Vehicle_Make, <span class="at">xend =</span> Vehicle_Make, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> n),</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co">#lolipop look with  - -  line</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 20 Vehicle Makes in Fatal Accidents"</span>, <span class="co"># titles</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Hawai‘i 2022–2023"</span>,</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="co">#remove X label</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of Fatalities"</span>,</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: Hawai‘i Fatal Accident Data"</span>) <span class="sc">+</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> <span class="co">#flip to side for easy read</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>), <span class="co">#trying to make bigger, but not working</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>), <span class="co">#also not working, sould be 16 looks 12</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">20</span>), <span class="co">#center, size still small</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#add tacoma image with magick package</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>tacoma_img <span class="ot">&lt;-</span> <span class="fu">image_read</span>(<span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Data"</span>, <span class="st">"Tacoma.jpeg"</span>))</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>tacoma_plot <span class="ot">&lt;-</span> <span class="fu">ggdraw</span>() <span class="sc">+</span> <span class="fu">draw_image</span>(tacoma_img) <span class="co">#using cowplot to make it layerable with ggplot</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>final_plot <span class="ot">&lt;-</span> <span class="fu">ggdraw</span>() <span class="sc">+</span> <span class="co">#ggdraw makes new combo</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(lollipop_plot) <span class="sc">+</span> <span class="co">#lolipop is baslayer</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(tacoma_plot, <span class="at">x =</span> <span class="fl">0.55</span>, <span class="at">y =</span> <span class="fl">0.05</span>, <span class="at">width =</span> <span class="fl">0.40</span>, <span class="at">height =</span> <span class="fl">0.40</span>) <span class="co"># trial and error y adding moves left</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Output"</span>, <span class="st">"lollipop_with_tacoma_corner.png"</span>),</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">14</span>, <span class="at">height =</span> <span class="dv">10</span>, <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="view-output" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="view-output"><span class="header-section-number">5</span> View Output</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lollipop_with_tacoma_corner.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 </main>

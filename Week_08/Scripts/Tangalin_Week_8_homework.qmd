@@ -1,24 +1,22 @@
 ---
 title: "Hawaii_Fatal_Accidents"
 author: "Natalia Tangalin"
-format: html
-date: today 
-output:
+date: today
+format:
   html:
     toc: true
-    toc_depth: 2
-    numbers_sections: true
-    theme: flatly
+    number-sections: true
   pdf:
     toc: true
-    number_sections: true
-knitr:                    
-  opts_chunk: 
+    number-sections: true
+knitr:
+  opts_chunk:
     message: false
     warning: false
 ---
-# Introduction
-  
+
+
+## Introduction
 Today we mapping fatal vehicle accidents in Hawaii in 2022 and 2023
 
 ---
@@ -37,17 +35,20 @@ library(USA.state.boundaries) #for state
 library(sf) #for spatial data
 library(tigris) #need county level boundries
 library(ggmap) #google maps if needed
-library(patchwork) #combine two ggplots
-library(cowplot) #works with patchwork
+library(patchwork) #combine two ggplots, tried
+library(cowplot) #pre-patchwork
 library(jpeg) #read jpeg into R
 library(forcats) #categorical data
 library(magick) #for Tacoma.jpeg
 library(readr) #redundant
 ```
+
 ---
 Data from National Highway Traffic Saftey Administration (NHTSA)
 ---
+
 Read in data
+
 ```{r}
 # Read in data on fatal vehicle accidents in Hawaii from 2022 and 2023 with make and model
 Make<-read_csv(here("Week_08","Data","Hawaii_22_23_Make2.csv")) 
@@ -59,6 +60,7 @@ head(Hawaii)
 head(Make)
 head(Accident)
 ```
+
 Combined Ugly plots for Super Ugly Plot
 
 ```{r}
@@ -150,9 +152,16 @@ combined_plot <- ggdraw()+ #going to combine
   draw_plot(map_plot) + #add map 
   draw_plot(radial_plot, x = -0.08, y = 0.24, width = 0.46, height = 0.46) #add polar, trial and error on moving it
 
-ggsave(here("Week_08", "Output", "hawaii_accidents_overlay.png"),
-       plot = combined_plot, width = 10, height = 8, dpi = 300) #save
+
 ```
+## View
+```{r}
+ggsave(here("Week_08", "Output", "hawaii_accidents_overlay.png"),
+       plot = combined_plot, width = 10, height = 8, dpi = 300)
+
+knitr::include_graphics(here("Week_08", "Output", "hawaii_accidents_overlay.png"))
+```
+
 ## Lolipop Good with Taco
 
 ```{r}
@@ -195,4 +204,9 @@ final_plot <- ggdraw() + #ggdraw makes new combo
 ggsave(filename = here("Week_08", "Output", "lollipop_with_tacoma_corner.png"),
        plot = final_plot, width = 14, height = 10, dpi = 300
 )
+```
+## View Output
+
+```{r, echo=FALSE, out.width="80%"}
+ knitr::include_graphics(here("Week_08", "Output", "lollipop_with_tacoma_corner.png"))
 ```
