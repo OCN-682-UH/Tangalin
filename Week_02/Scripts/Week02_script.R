@@ -1,7 +1,7 @@
 ### This is my first script.  I am learning how to import data ####
 ### Created by: Natalia Tangalin ####
 ### Created on: 2025-09-07 ####
-
+### Last updated: 2025-09-07
 
 ### libraries #####
 library(tidyverse)

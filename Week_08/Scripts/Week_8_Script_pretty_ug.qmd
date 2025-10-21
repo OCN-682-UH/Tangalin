@@ -1,0 +1,334 @@
+---
+title: "Hawaii_Fatal_Accidents"
+author: "Natalia Tangalin"
+format: html
+date: today 
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    numbers_sections: true
+    theme: flatly
+  pdf_document:
+    toc: true
+    number_sections: true
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+---
+# Introduction
+  
+Today we mapping fatal vehicle accidents in Hawaii in 2022 and 2023
+
+---
+
+## R Packages We Need
+
+library(tidyverse) # to visualize
+library(here) #file path
+library(maps) #gives maps
+library(mapdata) #to add Counties
+library(mapproj) #Map projections
+library(ggplot2) #redundant, make graphics
+library(dplyr) #redundant for data
+library(USA.state.boundaries) #for state
+library(sf) #for spatial data
+library(tigris) #need county level boundries
+library(ggmap) #google maps if needed
+library(patchwork) #combine two ggplots
+library(cowplot) #works with patchwork
+library(jpeg) #read jpeg into R
+library(forcats) #categorical data
+library(magick) #for Tacoma.jpeg
+---
+Data from National Highway Traffic Saftey Administration (NHTSA)
+---
+```{r}
+# Read in data on fatal vehicle accidents in Hawaii from 2022 and 2023 with make and model
+Make<-read_csv(here("Week_08","Data","Hawaii_22_23_Make2.csv")) 
+# Read in data on fatal vehicle accidents in Hawaii from 2022 
+Hawaii<-read_csv(here("Week_08","Data","Hawaii_Accident2223.csv"))
+Accident<-read_csv(here("Week_08","Data","Hawaii_accident_2022_2023.csv")) # late csv decided to clean the two into one
+# see data 
+head(Hawaii)
+head(Make)
+head(Accident)
+```
+
+Make Circular bar plot 
+```{r}
+
+df <- Make %>% #Make dataset with car makes
+  filter(!is.na(Vehicle_Make)) %>% #remove NA
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped", #remove other and group mopeds
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+", #group larger motorcycles
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc", #group midsize motorcycles
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make #remove unknowns 
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>% #remove NA rows
+  count(Vehicle_Make) %>% #how many for each vehicle make
+  mutate(Percent = round(n / sum(n) * 100, 1)) %>% #calc percentages
+  slice_max(order_by = Percent, n = 20) %>% #get top 20
+  arrange(desc(Percent)) %>% # sort top 20 descending
+  mutate(id = row_number()) # need ID for circular plot # Add angle and alignment for readable labels
+
+my_ugly_1 <- ggplot(df, aes(x = as.factor(id), y = Percent, fill = Vehicle_Make)) + #name plot, height is percent
+  geom_bar(stat = "identity", show.legend = FALSE) + # no legend
+  geom_text(data = label_data, # add car make labels
+            aes(x = id, y = Percent + 1.5, label = Vehicle_Make, angle = angle, hjust = hjust),
+            size = 3, inherit.aes = FALSE) +
+  coord_polar(start = 0) + #this makes the bar a circle
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents", #titles
+       subtitle = "Hawai‘i 2022–2023",
+       caption = "Source: National Highway Traffic Saftey Administration") + #titles, data source
+  theme_minimal(base_size = 10) + #minimal theme set font 
+  theme(
+    axis.text = element_blank(), #remove for simplicity
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold"), #bold and center
+    plot.subtitle = element_text(hjust = 0.5)
+  )
+
+ggsave(here("Week_08", "Output", "my_ugly_1.png"), plot = my_ugly_1, width = 8, height = 6, dpi = 300) #save plot
+
+```
+
+Ugly Map with rising bars 
+```{r}
+# Step 1: Bin accident data into grid cells
+Hawaii_binned <- Hawaii %>%
+  mutate(
+    lon_bin = round(LONGITUD, 2),  # Round each accident location to make grid
+    lat_bin = round(LATITUDE, 2) #round
+  ) %>%
+  count(lon_bin, lat_bin)  # Count accidents per grid cell
+
+# Step 2: Define bar width and height scale
+bar_width <- 0.06       # Wider footprint (was 0.03)
+height_scale <- 0.15    # Taller bars (was 0.05)
+
+# Step 3: Create bar rectangles
+Hawaii_bars <- Hawaii_binned %>% #new pipe with binned data
+  mutate(
+    xmin = lon_bin - bar_width / 2,
+    xmax = lon_bin + bar_width / 2,
+    ymin = lat_bin,
+    ymax = lat_bin + n * height_scale  # Height based on accident count
+  )
+
+# Step 4: Plot bars over county map
+ugly_2 <- ggplot() + #name ugly_2 so can save
+  geom_sf(data = HI_counties, fill = NA, color = "black", linewidth = 0.5) +  # Draw county outlines
+  geom_rect(data = Hawaii_bars, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = n)) +  # Draw rising bars
+  scale_fill_viridis_c(option = "C", name = "Accident Count") +  # Color scale for bar height
+  coord_sf(xlim = c(-161, -154), ylim = c(18.5, 22.5), expand = FALSE) +  # Zoom in on Hawai‘i
+  labs(title = "Accident Density in Hawai‘i (Rising Bars)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    panel.background = element_rect(fill = "lightblue", color = NA),
+    plot.background = element_rect(fill = "lightblue", color = NA),
+    legend.position = "bottom"
+  )
+ggsave(here("Week_08", "Output", "ugly_2.png"), plot = ugly_2, width = 10, height = 8, dpi = 300)
+
+
+```
+``` 
+Combined Ugly plots for Super Ugly Plot
+```{r}
+
+# Load accident data
+Accident <- read_csv(here("Week_08", "Data", "Hawaii_accident_2022_2023.csv"))
+
+# Fix swapped coordinates and clean data
+Accident_fixed <- Accident %>%
+  rename(LAT = LONGITUDE, LON = LATITUDE) %>%
+  mutate(
+    LON = if_else(LON > 0, -LON, LON),
+    Vehicle_Make = fct_lump(factor(Vehicle_Make), n = 6)
+  ) %>%
+  filter(
+    !is.na(LAT), !is.na(LON),
+    LAT > 18.5, LAT < 22.5,
+    LON > -161, LON < -154,
+    !is.na(FATALS), FATALS > 0
+  )
+
+# Load Hawai‘i counties
+HI <- counties(state = "HI", cb = TRUE, class = "sf")
+
+# Create map plot
+map_plot <- ggplot() +
+  geom_sf(data = HI, fill = "white", color = "black", linewidth = 0.3) +
+  geom_point(
+    data = Accident_fixed,
+    aes(x = LON, y = LAT, size = FATALS, color = Vehicle_Make),
+    alpha = 0.7
+  ) +
+  coord_sf(xlim = c(-160.5, -153.5), ylim = c(18.5, 22.5), expand = FALSE) +
+  scale_color_brewer(palette = "Dark2", name = "Vehicle Make", guide = guide_legend(override.aes = list(size = 3))) +
+  scale_size_continuous(name = "Fatalities", range = c(1, 6)) +
+  labs(title = "Fatal Vehicle Accidents in Hawai‘i (2022–2023) by Vehicle Make") +
+  theme_void(base_size = 14) +
+theme(
+  plot.background = element_rect(fill = "white", color = NA),
+  plot.title = element_text(hjust = 0.5, size = 10, face = "bold", color = "hotpink", angle = -05),
+  legend.position = "right",
+  legend.title = element_text(size = 8),
+  legend.text = element_text(size = 7),
+  legend.box = "vertical"
+) +
+guides(
+  color = guide_legend(order = 1),
+  size = guide_legend(order = 2, direction = "horizontal", title.position = "top", title.hjust = 0.5)
+)
+
+# Create radial chart data
+radial_data <- Accident %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped",
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+",
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc",
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  mutate(Percent = round(n / sum(n) * 100, 1)) %>%
+  slice_max(order_by = Percent, n = 20) %>%
+  arrange(desc(Percent)) %>%
+  mutate(id = row_number())
+
+# Create radial chart with labels and transparent background
+radial_plot <- ggplot(radial_data, aes(x = as.factor(id), y = Percent, fill = Vehicle_Make)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  geom_text(data = label_data,
+            aes(x = id, y = Percent + 1.5, label = Vehicle_Make, angle = angle, hjust = hjust),
+            size = 3, inherit.aes = FALSE) +
+  coord_polar(start = 0) +
+  theme_void(base_size = 10) +
+  theme(
+    plot.background = element_rect(fill = NA, color = NA)
+  )
+
+# Overlay radial chart on map (shifted mms by trial and error)
+combined_plot <- ggdraw()+
+  draw_plot(map_plot) +
+  draw_plot(radial_plot, x = -0.08, y = 0.24, width = 0.46, height = 0.46)
+
+ggsave(here("Week_08", "Output", "hawaii_accidents_overlay.png"),
+       plot = combined_plot, width = 10, height = 8, dpi = 300)
+```
+Lolipop Good?
+
+```{r}
+lollipop_plot <- Make %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped",
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+",
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc",
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  slice_max(order_by = n, n = 20) %>%
+  ggplot(aes(x = reorder(Vehicle_Make, n), y = n)) +
+  geom_point(color = "tomato2", size = 3) +
+  geom_segment(aes(x = Vehicle_Make, xend = Vehicle_Make, y = 0, yend = n),
+               linetype = "dashed", linewidth = 0.3) +
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents",
+       subtitle = "Hawai‘i 2022–2023",
+       x = NULL,
+       y = "Number of Fatalities",
+       caption = "Source: Hawai‘i Fatal Accident Data") +
+  coord_flip() +
+  theme(
+    axis.text.y = element_text(size = 16),
+    axi.title.y = element_text(size = 16), 
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
+    plot.subtitle = element_text(hjust = 0.5, size = 16)
+  )
+```
+Bar Chart Nice?
+```{r}
+bar_chart_nice <- Make %>% #assign name
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped",
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+",
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc",
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  mutate(Percent = round(n / sum(n) * 100, 1)) %>%
+  slice_max(order_by = Percent, n = 20) %>%
+  ggplot(aes(x = reorder(Vehicle_Make, -Percent), y = Percent, fill = Vehicle_Make)) +
+  geom_col(show.legend = FALSE) +
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents",
+       subtitle = "Hawai‘i 2022–2023",
+       x = NULL,
+       y = "Percentage of Accidents",
+       caption = "Source: Hawai‘i Fatal Accident Data") +
+  theme_minimal(base_size = 8) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5, size = 16)
+  )
+  ggsave(here("Week_08", "Output", "bar_chart_nice.png"),#save em
+       plot = bar_chart, width = 8, height = 6, dpi = 300) 
+
+
+```
+Lolipop with Tacoma
+```{r}
+lollipop_plot_nice <- Make %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped",
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+",
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc",
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  slice_max(order_by = n, n = 20) %>%
+  ggplot(aes(x = reorder(Vehicle_Make, n), y = n)) +
+  geom_point(color = "tomato2", size = 3) +
+  geom_segment(aes(x = Vehicle_Make, xend = Vehicle_Make, y = 0, yend = n),
+               linetype = "dashed", linewidth = 0.3) +
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents",
+       subtitle = "Hawai‘i 2022–2023",
+       x = NULL,
+       y = "Number of Fatalities",
+       caption = "Source: National Highway Traffic Saftey Administration") +
+  coord_flip() +
+  theme(
+    axis.text.y = element_text(size = 16), #make larger
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
+    plot.subtitle = element_text(hjust = 0.5, size = 14)
+  )
+
+tacoma_img <- image_read(here("Week_08", "Data", "Tacoma.jpeg"))
+tacoma_plot <- ggdraw() + draw_image(tacoma_img)
+
+final_plot <- ggdraw() +
+  draw_plot(lollipop_plot_nice) +
+  draw_plot(tacoma_plot, x = 0.55, y = 0.05, width = 0.40, height = 0.40) # trial and error y adding moves left
+
+ggsave(here("Week_08", "Output", "lollipop_with_tacoma_corner.png"),
+       plot = final_plot, width = 14, height = 10, dpi = 300)
+```
+

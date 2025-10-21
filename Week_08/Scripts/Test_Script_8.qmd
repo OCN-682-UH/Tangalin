@@ -1,0 +1,246 @@
+---
+title: "Hawaii_Accidents_22_23"
+author: "Natalia Tangalin"
+format: html
+date: today 
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+
+---
+# Introduction
+  
+Today we mapping fatal vehicle accidents in Hawaii in 2022 and 2023
+
+---
+_## R Packages We Need
+
+library(tidyverse)
+library(here)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(ggplot2)
+library(dplyr)
+library(USA.state.boundaries)
+library(sf)
+library(tigris) #need county level boundries
+library(ggmap)
+
+```{r}
+# Read in data on fatal vehicle accidents in Hawaii from 2022 and 2023 with make and model
+Make<-read_csv(here("Week_08","Data","Hawaii_22_23_Make2.csv"))
+# Read in data on fatal vehicle accidents in Hawaii from 2022 
+Hawaii<-read_csv(here("Week_08","Data","Hawaii_Accident2223.csv"))
+Accident<-read_csv(here("Week_08","Data","Hawaii_accident_2022_2023.csv"))
+# see data for both
+head(Hawaii)
+head(Make)
+head(Accident)
+```
+
+```{r}
+Make %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped",
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+",
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc",
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  mutate(Percent = round(n / sum(n) * 100, 1)) %>%
+  slice_max(order_by = Percent, n = 20) %>%
+  ggplot(aes(x = reorder(Vehicle_Make, -Percent), y = Percent, fill = Vehicle_Make)) +
+  geom_col(show.legend = FALSE) +
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents",
+       subtitle = "Hawai‘i 2022–2023",
+       x = NULL,
+       y = "Percentage of Accidents",
+       caption = "Source: Hawai‘i Fatal Accident Data") +
+  theme_minimal(base_size = 8) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5)
+  )
+
+```
+
+
+```{r}
+Make %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped",
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+",
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc",
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  slice_max(order_by = n, n = 20) %>%
+  ggplot(aes(x = reorder(Vehicle_Make, n), y = n)) +
+  geom_point(color = "tomato2", size = 3) +
+  geom_segment(aes(x = Vehicle_Make, xend = Vehicle_Make, y = 0, yend = n),
+               linetype = "dashed", linewidth = 0.3) +
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents",
+       subtitle = "Hawai‘i 2022–2023",
+       x = NULL,
+       y = "Number of Fatalities",
+       caption = "Source: Hawai‘i Fatal Accident Data") +
+  coord_flip() +
+  theme(
+    axis.text.y = element_text(size = 8),
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5)
+  )
+
+```
+
+You can add options to executable code like this 
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+df <- Make %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make %in% c("Other Make 0-50cc", "Honda 0- 50 cc", "Moped") ~ "Moped",
+    Vehicle_Make %in% c("Harley-Davidson 750cc or greater", "Yamaha 750cc or greater", "Honda 750 cc or greater") ~ "Motorcycle Harley-Davidson/Yamaha/Honda 750+",
+    Vehicle_Make %in% c("Yamaha 450-749cc", "Honda 450-749 cc") ~ "Yamaha/Honda 450-749cc",
+    Vehicle_Make %in% c("Other Make Unknown", "Other Make Unknown cc") ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  mutate(Percent = round(n / sum(n) * 100, 1)) %>%
+  slice_max(order_by = Percent, n = 20) %>%
+  arrange(desc(Percent)) %>%
+  mutate(id = row_number())
+
+# Add angle and alignment for readable labels
+label_data <- df %>%
+  mutate(angle = 90 - 360 * (id - 0.5) / n(),
+         hjust = ifelse(angle < -90, 1, 0),
+         angle = ifelse(angle < -90, angle + 180, angle))
+
+# Plot
+ggplot(df, aes(x = as.factor(id), y = Percent, fill = Vehicle_Make)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  geom_text(data = label_data,
+            aes(x = id, y = Percent + 1.5, label = Vehicle_Make, angle = angle, hjust = hjust),
+            size = 3, inherit.aes = FALSE) +
+  coord_polar(start = 0) +
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents",
+       subtitle = "Hawai‘i 2022–2023",
+       caption = "Source: Hawai‘i Fatal Accident Data") +
+  theme_minimal(base_size = 10) +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5)
+  )
+
+
+```
+Bad Accident Density
+```{r}
+ggplot() +
+  geom_sf(data = HI_counties, fill = NA, color = "black", linewidth = 0.5) +
+  geom_rect(data = Hawaii_bars, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = n)) +
+  scale_fill_viridis_c(option = "C", name = "Accident Count") +
+  coord_sf(xlim = c(-161, -154), ylim = c(18.5, 22.5), expand = FALSE) +
+  labs(title = "Accident Density in Hawai‘i") +
+  theme_void(base_size = 16) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 22),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10),
+    plot.margin = margin(10, 10, 10, 10),
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+```
+Bad Accident density
+```{r}
+ggplot() +
+  geom_sf(data = HI_counties, fill = NA, color = "gray30", linewidth = 0.4) +
+  stat_density_2d(
+    data = Hawaii,
+    aes(x = LONGITUD, y = LATITUDE, fill = ..level.., alpha = ..level..),
+    geom = "polygon",
+    contour = TRUE,
+    n = 200
+  ) +
+  scale_fill_viridis_c(option = "C", name = "Accident Density") +
+  scale_alpha(range = c(0.1, 0.4), guide = "none") +  # Lower max alpha for softer yellow
+  coord_sf(xlim = c(-161, -154), ylim = c(18.5, 22.5), expand = FALSE) +
+  labs(title = "Accident Density in Hawai‘i (Heat Map)") +
+  theme_void(base_size = 16) +
+  theme(
+    plot.title = element_text(family = "abril", hjust = 0.5, size = 22),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10),
+    plot.margin = margin(10, 10, 10, 10),
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+```
+ggplot() +
+  geom_sf(data = HI_counties, fill = NA, color = "gray30", linewidth = 0.4) +
+  stat_density_2d(
+    data = Hawaii,
+    aes(x = LONGITUD, y = LATITUDE, fill = ..level.., alpha = ..level..),
+    geom = "polygon",
+    contour = TRUE,
+    n = 200
+  ) +
+  scale_fill_viridis_c(option = "C", name = "Accident Density") +
+  scale_alpha(range = c(0.1, 0.4), guide = "none") +  # Lower max alpha for softer yellow
+  coord_sf(xlim = c(-161, -154), ylim = c(18.5, 22.5), expand = FALSE) +
+  labs(title = "Accident Density in Hawai‘i (Heat Map)") +
+  theme_void(base_size = 16) +
+  theme(
+    plot.title = element_text(family = "abril", hjust = 0.5, size = 22),
+    legend.position = "bottom",
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10),
+    plot.margin = margin(10, 10, 10, 10),
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+```{r}
+ggplot() +
+  geom_sf(data = HI_counties, fill = NA, color = "gray30", linewidth = 0.4) +
+  geom_hex(data = Hawaii, aes(x = LONGITUD, y = LATITUDE), bins = 80) +
+  scale_fill_viridis_c(option = "C", name = "Accident Count") +
+  coord_sf(xlim = c(-160.5, -154.5), ylim = c(18.8, 22.3), expand = FALSE) +
+  labs(
+    title = "Fatal Accidents in Hawai‘i 2022–2023",
+    caption = "Source: Hawai‘i Fatal Accident Data"
+  ) +
+  theme_void(base_size = 18) +
+  theme(
+    plot.title = element_text(family = "abril", hjust = 0.5, size = 14, face = "bold"),
+    plot.caption = element_text(hjust = 0, size = 10, margin = margin(t = 10)),
+    legend.position = c(0.05, 0.05),                    # Bottom left corner
+    legend.justification = c("left", "bottom"),
+    legend.direction = "horizontal",                   # Horizontal layout
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10),
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.background = element_rect(fill = "white", color = NA),
+    plot.margin = margin(30, 30, 30, 30)
+  )
+```

@@ -6,20 +6,17 @@ format:
   html:
     toc: true
     number-sections: true
-  pdf:
-    toc: true
-    number-sections: true
 knitr:
   opts_chunk:
     message: false
     warning: false
 ---
 
-
 ## Introduction
+
 Today we mapping fatal vehicle accidents in Hawaii in 2022 and 2023
 
----
+------------------------------------------------------------------------
 
 ## R Packages We Need
 
@@ -44,12 +41,16 @@ library(readr) #redundant
 ```
 
 ---
+
 Data from National Highway Traffic Saftey Administration (NHTSA)
----
 
 Read in data
 
 ```{r}
+#| warning: false
+#| message: false
+
+
 # Read in data on fatal vehicle accidents in Hawaii from 2022 and 2023 with make and model
 Make<-read_csv(here("Week_08","Data","Hawaii_22_23_Make2.csv")) 
 # Read in data on fatal vehicle accidents in Hawaii from 2022 
@@ -152,9 +153,12 @@ combined_plot <- ggdraw()+ #going to combine
   draw_plot(map_plot) + #add map 
   draw_plot(radial_plot, x = -0.08, y = 0.24, width = 0.46, height = 0.46) #add polar, trial and error on moving it
 
+combined_plot
 
 ```
+
 ## View
+
 ```{r}
 ggsave(here("Week_08", "Output", "hawaii_accidents_overlay.png"),
        plot = combined_plot, width = 10, height = 8, dpi = 300)
@@ -204,7 +208,9 @@ final_plot <- ggdraw() + #ggdraw makes new combo
 ggsave(filename = here("Week_08", "Output", "lollipop_with_tacoma_corner.png"),
        plot = final_plot, width = 14, height = 10, dpi = 300
 )
+final_plot
 ```
+
 ## View Output
 
 ```{r, echo=FALSE, out.width="80%"}

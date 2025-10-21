@@ -90,7 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#lolipop-good-with-taco" id="toc-lolipop-good-with-taco" class="nav-link" data-scroll-target="#lolipop-good-with-taco"><span class="header-section-number">4</span> Lolipop Good with Taco</a></li>
   <li><a href="#view-output" id="toc-view-output" class="nav-link" data-scroll-target="#view-output"><span class="header-section-number">5</span> View Output</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Tangalin_Week_8_homework.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -132,13 +132,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="r-packages-we-need" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="r-packages-we-need"><span class="header-section-number">2</span> R Packages We Need</h2>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Data from National Highway Traffic Saftey Administration (NHTSA)</td>
-</tr>
-</tbody>
-</table>
+<hr>
+<p>Data from National Highway Traffic Saftey Administration (NHTSA)</p>
 <p>Read in data</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in data on fatal vehicle accidents in Hawaii from 2022 and 2023 with make and model</span></span>
@@ -618,7 +613,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Overlay radial chart on map (shifted mms by trial and error)</span></span>
 <span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>combined_plot <span class="ot">&lt;-</span> <span class="fu">ggdraw</span>()<span class="sc">+</span> <span class="co">#going to combine</span></span>
 <span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(map_plot) <span class="sc">+</span> <span class="co">#add map </span></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(radial_plot, <span class="at">x =</span> <span class="sc">-</span><span class="fl">0.08</span>, <span class="at">y =</span> <span class="fl">0.24</span>, <span class="at">width =</span> <span class="fl">0.46</span>, <span class="at">height =</span> <span class="fl">0.46</span>) <span class="co">#add polar, trial and error on moving it</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_plot</span>(radial_plot, <span class="at">x =</span> <span class="sc">-</span><span class="fl">0.08</span>, <span class="at">y =</span> <span class="fl">0.24</span>, <span class="at">width =</span> <span class="fl">0.46</span>, <span class="at">height =</span> <span class="fl">0.46</span>) <span class="co">#add polar, trial and error on moving it</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>combined_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Tangalin_Week_8_homework_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="view" class="level2" data-number="3">
@@ -631,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="hawaii_accidents_overlay.png" class="img-fluid figure-img" width="1500"></p>
+<p><img src="../Output/hawaii_accidents_overlay.png" class="img-fluid figure-img" width="1500"></p>
 </figure>
 </div>
 </div>
@@ -678,7 +682,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="fu">here</span>(<span class="st">"Week_08"</span>, <span class="st">"Output"</span>, <span class="st">"lollipop_with_tacoma_corner.png"</span>),</span>
 <span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">plot =</span> final_plot, <span class="at">width =</span> <span class="dv">14</span>, <span class="at">height =</span> <span class="dv">10</span>, <span class="at">dpi =</span> <span class="dv">300</span></span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>final_plot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Tangalin_Week_8_homework_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="view-output" class="level2" data-number="5">
@@ -687,7 +699,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lollipop_with_tacoma_corner.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="../Output/lollipop_with_tacoma_corner.png" class="img-fluid figure-img" style="width:80.0%"></p>
 </figure>
 </div>
 </div>

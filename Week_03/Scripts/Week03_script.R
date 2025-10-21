@@ -1,7 +1,7 @@
 ### This is my ggplot for Week_03 assignment. ####
 ### Created by: Natalia Tangalin ####
 ### Created on: 2025-12-09 ####
-### Last updated: 2025-16-12 ###
+### Last updated: 2025-16-09 ###
 
 ### Libraries #####
 library(palmerpenguins)

@@ -1,0 +1,315 @@
+---
+title: "Hawaii_Fatal_Accidents"
+author: "Natalia Tangalin"
+format: html
+date: today 
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+knitr:                     #to suppress Rchunk warning messages        opts_chunk: 
+    message: false
+    warning: false
+---
+# Introduction
+  
+Today we mapping fatal vehicle accidents in Hawaii in 2022 and 2023
+
+---
+
+## R Packages We Need
+
+library(tidyverse)
+library(here)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(ggplot2)
+library(dplyr)
+library(USA.state.boundaries)
+library(sf)
+library(tigris) #need county level boundries
+library(ggmap)
+
+---
+Data from National Highway Traffic Saftey Administration (NHTSA)
+---
+
+```{r}
+# Read in data on fatal vehicle accidents in Hawaii from 2022 and 2023 with make and model
+Make<-read_csv(here("Week_08","Data","Hawaii_22_23_Make2.csv"))
+# Read in data on fatal vehicle accidents in Hawaii from 2022 
+Hawaii<-read_csv(here("Week_08","Data","Hawaii_Accident2223.csv"))
+Accident<-read_csv(here("Week_08","Data","Hawaii_accident_2022_2023.csv"))
+# see data for both
+head(Hawaii)
+head(Make)
+head(Accident)
+
+```
+Make a Map of Hawaii
+
+```{r}
+# get data for states
+states <- map_data("state")
+HI_data <- states %>% filter(region == "hawaii")
+
+# Use the states dataset
+HI_data<-states %>%
+  filter(region == "hawaii")
+
+# Load county-level map data
+counties <- map_data("county")
+HI_counties <- counties %>% filter(region == "hawaii") 
+
+# no map, check if "hawaii" is listed
+counties <- map_data("county")
+unique(counties$region) 
+#no county data for Hawaii ;(
+
+data("state_boundaries_wgs84")  # loads the spatial object
+st_crs(state_boundaries_wgs84)  # confirms it's WGS84
+head(state_boundaries_wgs84)    # preview attributes
+HI_sf <- state_boundaries_wgs84 %>% 
+  filter(NAME == "Hawaii") #filter for Hawaii
+
+# Get Hawai‘i counties as an sf object
+HI_counties <- counties(state = "HI", cb = TRUE, class = "sf")
+
+# Check column names
+names(HI_counties)
+
+
+# Plot Hawai‘i counties
+ggplot(HI_counties) +
+  geom_sf(aes(fill = NAME), color = "white", linewidth = 0.3) +
+  geom_point(data = Hawaii, aes(x = LONGITUD, y = LATITUDE, color = FATALS, size = FATALS),
+             alpha = 0.6) +
+  coord_sf(xlim = c(-161, -154), ylim = c(18.5, 22.5), expand = FALSE) +
+  scale_fill_brewer(palette = "Pastel1", guide = "none") +
+  scale_color_gradient(low = "purple", high = "red", guide = "none") +
+  scale_size_continuous(range = c(1, 3), guide = "none") +
+  theme_void(base_size = 14) +
+  theme(
+    panel.background = element_rect(fill = NA, color = NA),
+    plot.background = element_rect(fill = NA, color = NA),
+    plot.title = element_blank(),
+    legend.position = "none"
+  )
+
+
+```
+
+Try new map with hexbin
+Libraries that we need 
+library(tidyverse) 
+library(viridis) 
+library(geojsonio) 
+library(sf) 
+library(broom) 
+library(cowplot) 
+library(hexbin) 
+inlibrary(showtext)
+library(rayshader)
+library(patchwork)
+
+
+ggplot() +
+  geom_sf(data = HI_counties, fill = NA, color = "gray30", linewidth = 0.4) +  # Draw county outlines
+  geom_hex(data = Hawaii, aes(x = LONGITUD, y = LATITUDE), bins = 30) +  # Hexbin layer from accident data
+  scale_fill_viridis_c(option = "C", name = "Accident Count") +  # Color scale for hexbin density
+  coord_sf(xlim = c(-161, -154), ylim = c(18.5, 22.5), expand = FALSE) +  # Zoom in on Hawai‘i
+  labs(title = "Accident Density in Hawai‘i (Hexbin)") +
+  theme_minimal(base_family = "tawa", base_size = 14) +
+  theme(
+    plot.title = element_text(family = "abril", hjust = 0.5, size = 20),
+    panel.background = element_rect(fill = "#e6f2ff", color = NA),
+    plot.background = element_rect(fill = "#e6f2ff", color = NA),
+    legend.position = "bottom"
+  )
+
+# this with rising bars
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(viridis)
+
+# Step 1: Bin accident data into grid cells
+Hawaii_binned <- Hawaii %>%
+  mutate(
+    lon_bin = round(LONGITUD, 2),  # Round longitude to create grid
+    lat_bin = round(LATITUDE, 2)    # Round latitude to create grid
+  ) %>%
+  count(lon_bin, lat_bin)  # Count accidents per grid cell
+
+# Step 2: Define bar width and height scale
+bar_width <- 0.06       # Wider footprint (was 0.03)
+height_scale <- 0.15    # Taller bars (was 0.05)
+
+# Step 3: Create bar rectangles
+Hawaii_bars <- Hawaii_binned %>%
+  mutate(
+    xmin = lon_bin - bar_width / 2,
+    xmax = lon_bin + bar_width / 2,
+    ymin = lat_bin,
+    ymax = lat_bin + n * height_scale  # Height based on accident count
+  )
+
+# Step 4: Plot bars over county map
+ggplot() +
+  geom_sf(data = HI_counties, fill = NA, color = "black", linewidth = 0.5) +  # Draw county outlines
+  geom_rect(data = Hawaii_bars, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = n)) +  # Draw rising bars
+  scale_fill_viridis_c(option = "C", name = "Accident Count") +  # Color scale for bar height
+  coord_sf(xlim = c(-161, -154), ylim = c(18.5, 22.5), expand = FALSE) +  # Zoom in on Hawai‘i
+  labs(title = "Accident Density in Hawai‘i (Rising Bars)") +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 18),
+    panel.background = element_rect(fill = "#e6f2ff", color = NA),
+    plot.background = element_rect(fill = "#e6f2ff", color = NA),
+    legend.position = "bottom"
+  )
+
+Fatal Accidents by Hour in the Day
+```{r}
+Hawaii %>%
+filter(!is.na(HOUR)) %>%
+count(HOUR) %>%
+ggplot(aes(x = factor(HOUR), y = n, fill = factor(HOUR))) +
+geom_col() +
+labs(title = "Fatal Accidents by Hour",
+x = "Hour of Day",
+y = "Number of Fatal Accidents") +
+theme_minimal(base_size = 14) +
+theme(
+axis.text.x = element_blank(),       # Removes tick labels
+axis.ticks.x = element_blank(),      # Removes tick marks
+plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+Fata Accidents by Month
+```{r}
+Hawaii %>%
+  filter(!is.na(MONTH)) %>%
+  count(MONTH) %>%
+  ggplot(aes(x = factor(MONTH), y = n, fill = factor(MONTH))) +
+  geom_col() +
+  labs(title = "Fatal Accidents by Month",
+       x = "Month",
+       y = "Number of Fatal Accidents") +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+```
+Fatal Accidents by Light Conditon
+
+```{r}
+Hawaii %>%
+  filter(!is.na(LGT_COND)) %>%
+  count(LGT_COND) %>%
+  ggplot(aes(x = LGT_COND, y = n, fill = LGT_COND)) +
+  geom_col() +
+  labs(title = "Fatal Accidents by Light Condition",
+       x = "Light Condition",
+       y = "Number of Fatal Accidents") +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+```
+Fatal Accidents by Weather
+
+```{R} 
+Hawaii %>%
+  filter(!is.na(WEATHER)) %>%
+  count(WEATHER) %>%
+  ggplot(aes(x = WEATHER, y = n, fill = WEATHER)) +
+  geom_col() +
+  labs(title = "Fatal Accidents by Weather",
+       x = "Weather",
+       y = "Number of Fatal Accidents") +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+```
+Accidents Involving Pedestrians
+
+```{r}
+Make %>%
+  mutate(Pedestrian_Involved = if_else(Accident_Involved == "Pedestrian", "Yes", "No")) %>%
+  count(Pedestrian_Involved) %>%
+  ggplot(aes(x = Pedestrian_Involved, y = n, fill = Pedestrian_Involved)) +
+  geom_col() +
+  labs(title = "Accidents Involving Pedestrians",
+       x = NULL,
+       y = "Number of Accidents") +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+
+
+
+```
+Top 10 Makes and Models by Vechile_Make
+```{r}
+Make %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  mutate(Percent = round(n / sum(n) * 100, 1)) %>%
+  slice_max(order_by = Percent, n = 10) %>%
+  ggplot(aes(x = reorder(Vehicle_Make, -Percent), y = Percent, fill = Vehicle_Make)) +
+  geom_col(show.legend = FALSE) +
+  labs(title = "Top 10 Vehicle Makes in Fatal Accidents",
+       x = NULL,
+       y = "Percentage of Accidents") +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold")
+  )
+
+```
+Lolipop for Top 20
+
+```
+library(ggplot2)
+library(scales)
+theme_set(theme_classic())
+
+Make %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  mutate(Vehicle_Make = case_when(
+    Vehicle_Make == "Other Make 0-50 cc" ~ "Moped",
+    Vehicle_Make == "Other Make Unknown" ~ NA_character_,
+    TRUE ~ Vehicle_Make
+  )) %>%
+  filter(!is.na(Vehicle_Make)) %>%
+  count(Vehicle_Make) %>%
+  slice_max(order_by = n, n = 20) %>%
+  ggplot(aes(x = reorder(Vehicle_Make, n), y = n)) +
+  geom_point(color = "tomato2", size = 3) +
+  geom_segment(aes(x = Vehicle_Make, xend = Vehicle_Make, y = 0, yend = n),
+               linetype = "dashed", linewidth = 0.3) +
+  labs(title = "Top 20 Vehicle Makes in Fatal Accidents",
+       subtitle = "Hawai'i 2022-2023",
+       x = NULL,
+       y = "Number of Fatalities",
+       caption = "Source: Hawai‘i Fatal Accident Data") +
+  coord_flip() +
+  theme(
+    axis.text.y = element_text(size = 8),
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.subtitle = element_text(hjust = 0.5)
+  )
