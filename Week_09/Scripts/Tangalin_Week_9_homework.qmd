@@ -1,0 +1,74 @@
+---
+title: "Tangalin_Week_9"
+author: "Natalia Tangalin"
+format: html
+date: today 
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+---
+
+## Introduction
+Counts of Whelks, Crabs, and Stars by tide level (from low to mid to high) 
+
+## R Packages wer need
+library(dplyr)
+library(janitor)
+library(ggplot2)
+library(forcats)
+
+###Load data and clean columns
+
+```{r}
+# Tell R where to look for intertidal.csv
+data_path <- here("Week_09", "Data", "intertidaldata.csv")
+
+# Read the CSV file in and stop auto string to character conversion
+intertidal_data <- read.csv(data_path, stringsAsFactors = FALSE)
+
+# Clean column names
+intertidal_data <- intertidal_data %>% 
+    clean_names() %>%            # make the names standard
+   remove_empty(which = c("rows", "cols")) # Remove empty rows or columns
+
+# Rename Quadrat to tide_level
+intertidal_data <- intertidal_data %>%
+    rename(tide_level = quadrat) %>%  # Rename quadrat to tide_level
+    mutate(tide_level = recode(tide_level,  # Recode tide levels
+                                Low = "Low-Tide", 
+                                Mid = "Mid-Tide",  
+                                High = "High-Tide"))
+
+# Creating summary_data
+summary_data <- intertidal_data %>%
+    group_by(site, transect, tide_level) %>%  # Grouping by site, transect, and tide level
+    summarise(total_whelks = sum(whelks_counts, na.rm = TRUE),  # Use correct column names, no NAs
+              total_crabs = sum(crabs_counts, na.rm = TRUE),
+              total_stars = sum(stars_counts, na.rm = TRUE), .groups = 'drop') %>% #remove grouping after summary
+    pivot_longer(cols = c(total_whelks, total_crabs, total_stars), #wide to long to analyze by species
+                 names_to = "species", values_to = "count") %>% 
+    mutate(tide_level = factor(tide_level, levels = c("Low-Tide", "Mid-Tide", "High-Tide")))# Order factor levels
+
+# Remove NAs from count and tide_level
+summary_data_cleaned <- summary_data %>%
+    filter(!is.na(count) & !is.na(tide_level))
+
+# Check summary_data_cleaned for any remaining NAs
+print(summary_data_cleaned)
+```
+##Create a Plot
+```{r}
+ggplot(summary_data_cleaned, aes(x = tide_level, y = count, fill = species)) + 
+    geom_bar(stat = "identity", position = position_dodge()) +  # Side-by-side bars
+    labs(title = "Counts of Species by Tide Level", x = "Tide Level", y = "Count") + 
+    theme_minimal() +
+    scale_fill_manual(values = c("total_whelks" = "purple", "total_crabs" = "blue", "total_stars" = "red"))  # color based on unique_species
+
+ggsave(
+  filename = here("Week_09", "Output", "tide_plot.png"), 
+  plot = tide_plot, 
+  width = 8, 
+  height = 6
+)
+```
