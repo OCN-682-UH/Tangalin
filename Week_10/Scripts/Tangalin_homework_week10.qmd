@@ -1,0 +1,149 @@
+---
+title: "PSS10"
+author: "Natalia Tangalin"
+format: html
+date: today 
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+---
+
+## Quarto
+library(tidyverse)
+library(here)
+library(ggplot2)
+
+
+## Function to calculate the scores and levels of perceived stress on PSS-10
+
+```{r}
+
+pss_data <- read.csv("/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/Week_10/Data/data.csv")
+ # Read the CSV file issues with here but loaded
+
+#function to calcaulate PSS10 scores and levels
+calculate_pss10_total_score <- function(data) {
+    # Reverse scoring for the positively worded items
+    data$PSS10_Q04 <- 4 - data$PSS10_Q04
+    data$PSS10_Q05 <- 4 - data$PSS10_Q05
+    data$PSS10_Q07 <- 4 - data$PSS10_Q07
+    data$PSS10_Q08 <- 4 - data$PSS10_Q08
+    
+    # Print scores for verification
+    print(data[c("PSS10_Q04", "PSS10_Q05", "PSS10_Q07", "PSS10_Q08")])
+    
+    # Calculate the Total Score
+    data$PSS10_Total <- rowSums(data[, c("PSS10_Q01", "PSS10_Q02", "PSS10_Q03", 
+                                          "PSS10_Q04", "PSS10_Q05", "PSS10_Q06", 
+                                          "PSS10_Q07", "PSS10_Q08", "PSS10_Q09", "PSS10_Q10")], na.rm = TRUE)
+
+    # Print total scores for verification
+    print(data$PSS10_Total)
+
+    # Categorize the Total Score into three stress levels
+    data$PSS10_Level <- cut(data$PSS10_Total,
+                             breaks = c(-Inf, 13, 26, 40), 
+                             labels = c("low", "moderate", "high"), 
+                             right = TRUE)
+    
+    return(data)
+  
+}
+```
+
+Test the function
+
+```{r}
+# Call the function to calculate scores and levels
+calculated_data <- calculate_pss10_total_score(pss_data)
+print(calculated_data) # Print the resulting data frame with scores and categories
+
+```
+Function as a plot
+
+```{r}
+plot_pss10_stress_distribution <- function(data, PSS10_graph) {
+  # Categorize PSS10_Level based on timepoint
+  data$Timepoint <- ifelse(data$Timepoint == 0, "Pre", "Post")
+
+  # Create a data frame to calculate percentages for each Timepoint
+  pre_dist <- prop.table(table(data[data$Timepoint == "Pre", "PSS10_Level"])) * 100
+  post_dist <- prop.table(table(data[data$Timepoint == "Post", "PSS10_Level"])) * 100
+
+  # Prepare the results for plotting
+  results <- data.frame(
+    Stress_Level = rep(c("low", "moderate", "high"), 2),
+    Percentage = c(
+      c(pre_dist["low"], pre_dist["moderate"], pre_dist["high"]), 
+      c(post_dist["low"], post_dist["moderate"], post_dist["high"])
+    ),
+    Timepoint = rep(c("Pre", "Post"), each = 3)
+  )
+
+  # Replace NAs with 0 for percentages
+  results[is.na(results)] <- 0
+  
+  # Reorder Stress_Level factor in order
+  results$Stress_Level <- factor(results$Stress_Level, levels = c("high", "moderate", "low")) 
+
+  # Create the plot
+  plot <- ggplot(results, aes(x = Stress_Level, y = Percentage, fill = Timepoint)) +
+        geom_bar(stat = "identity", position = position_dodge()) +
+        labs(title = "PSS-10 Stress Levels Pre and Post Test",
+             x = "Stress Level",
+             y = "Percentage") +
+        theme_minimal()
+    
+    # Print the plot to see it in R console
+print(plot)
+
+   # Save the plot
+ggsave("/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/Week_10/Output/PSS10_graph.png", 
+       plot, 
+       width = 8, 
+       height = 5)
+}
+
+```
+Test functions
+```{r}
+# Call the plotting function with the correct filename
+plot_pss10_stress_distribution(calculated_data, "pss10_stress_distribution_1.png")  # First plot
+```
+
+```{r}
+set.seed(123) # Random numbers to test
+
+calculated_data <- data.frame(
+    PSS10_Q01 = sample(0:4, 30, replace = TRUE), # only values 0 to 4, 30 samples, can use numbers more than once is TRUE
+    PSS10_Q02 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q03 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q04 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q05 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q06 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q07 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q08 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q09 = sample(0:4, 30, replace = TRUE),
+    PSS10_Q10 = sample(0:4, 30, replace = TRUE),
+    Timepoint = rep(0:1, each = 15)
+)
+
+#make the timepoint column 15 of pre 0 and post 1
+calculated_data$PSS10_Level <- sample(c("low", "moderate", "high"), 30, replace = TRUE)# random levels?
+
+# function to calculate scores and levels
+calculated_data <- calculate_pss10_total_score(calculated_data)
+print(calculated_data) # Print the resulting data frame with scores and categories
+
+# Convert the PSS10_Level to a factor calculated in the function)
+calculated_data$PSS10_Level <- factor(calculated_data$PSS10_Level, levels = c("low", "moderate", "high"))
+
+# Call the plotting function
+plot_pss10_stress_distribution(calculated_data, "pss10_stress_distribution_2.png")
+```
+
+
+
+
+
