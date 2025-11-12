@@ -1,0 +1,12 @@
+name: DaBest_app
+title: DaBest_app
+username: ainacology
+account: ainacology
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 16039919
+bundleId: 11166677
+url: https://ainacology.shinyapps.io/DaBest_app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
