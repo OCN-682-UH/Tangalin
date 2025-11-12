@@ -1,0 +1,171 @@
+---
+title: "TidyTuesNov11"
+author: "Tangalin"
+format: html
+date: today 
+editor: visual
+echo: true
+---
+
+Explore data
+
+```{r}
+library(getTBinR) #package for WHO data
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(here)
+library(rnaturalearth)
+library(ggrepel)
+library(devtools)
+library(readr)
+
+
+tuesdata <- tidytuesdayR::tt_load(2025, week = 45) #download weeks tidytuesday data
+
+who_tb_data <- tuesdata$who_tb_data 
+
+tb_burden <- get_tb_burden() 
+
+names(who_tb_data)
+names(tb_burden)# see names of columns for difference
+
+get_tb_burden(additional_datasets = "all") # can get even more data but supposed to stick to tinytues data?
+
+defs_of_interest <- search_data_dict(def = c("mortality", "g_whoregion"))
+knitr::kable(defs_of_interest) #|e_mort_100k is Estimated mortality of TB cases (all forms) per 100 000 population or e_mort_exc_tbhiv_100k Estimated mortality of TB cases (all forms, excluding HIV) per 100 000 population
+
+ggsave("C:/Users/ntang/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/Nov11/get_tb_burden_map.png",
++        plot = tb_map, width = 10, height = 6, dpi = 300)
+
+str(tb_burden) #see name plus data type and value
+
+unique(who_tb_data$g_whoregion) # see regions intrested in[3} Africa or [4] Western Pacific pr [6] South-East-Asia interesting
+
+getTBinR::map_tb_burden(metric = "e_inc_100k") #Western Pacific homogenous
+
+
+tb_burden_map <- getTBinR::map_tb_burden(metric = "e_inc_100k") ##  assign the generated plot to the variable 'tb_burden_map'
+
+ggsave("C:/Users/ntang/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/Nov11/tb_burden_map.png",
+       plot = tb_burden_map, width = 10, height = 6, dpi = 300) #save map
+
+
+#annual percentage rate change for max incidence rate or above 5/100K
+higher_burden_countries <- tb_burden %>%
+  group_by(country) %>%
+  summarise(e_inc_100k = min(e_inc_100k)) %>%
+  filter(e_inc_100k > 5) %>%
+  pull(country) %>%
+  unique
+#> `summarise()` ungrouping output (override with `.groups` argument)
+
+getTBinR::plot_tb_burden_overview(metric = "e_inc_100k",
+                                  interactive = FALSE,
+                                  annual_change = TRUE,
+                                  countries = higher_burden_countries) # can't read coutry names as ontop of each other
+```
+
+Make
+
+```{r}
+# This data is a subset of WHO TB data via the getTBinR package (Sam Abbott) taken trom tidytuesday site
+
+# Import libraries
+library(tidyverse)
+library(devtools)
+
+# Install getTBinR package
+#devtools::install_github("seabbs/getTBinR")
+library(getTBinR)
+
+# Load WHO TB burden data
+tb_burden <- get_tb_burden()
+
+# Create a vector of variable of interest
+vars_of_interest <- c(
+  "country",
+  "g_whoregion",
+  "iso_numeric",
+  "iso2",
+  "iso3",
+  "year",
+  "c_cdr",
+  "c_newinc_100k",
+  "cfr",
+  "e_inc_100k",
+  "e_inc_num",
+  "e_mort_100k",
+  "e_mort_exc_tbhiv_100k",
+ "e_mort_exc_tbhiv_num",
+  "e_mort_num",
+  "e_mort_tbhiv_100k",
+  "e_mort_tbhiv_num",
+  "e_pop_num"
+)
+
+# Subset the dataset 
+who_tb_data_subset <- tb_burden %>%
+  select(all_of(vars_of_interest)) 
+
+
+
+```
+
+Plot
+
+```{r}
+#plot
+# Load the dataset
+# Load the dataset using the full path
+who_tb_data_subset <- read_csv("C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Nov11/Data/who_tb_data_subset.csv")
+
+# Create the plot
+plot <- ggplot(who_tb_data_subset, aes(x = country, y = e_inc_100k)) +
+    geom_point() +
+    labs(title = "Einc per 100k by Country", x = "Country", y = "Einc per 100k", color = "g_whoregion") 
+
+print(plot) #show plot
+
+# Save plot 1
+ggsave("tb3.png", plot = plot1)
+
+# Load the dataset using the full path
+who_tb_data_subset <- read_csv("C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Nov11/Data/who_tb_data_subset.csv")
+
+# Create the plot with facets
+plot <- ggplot(who_tb_data_subset, aes(x = country, y = e_inc_100k)) +
+    geom_point() +
+    labs(title = "Einc per 100k by Country", x = "Country", y = "Einc per 100k") +
+    facet_wrap(~g_whoregion)  # Corrected function name
+# Load the dataset
+who_tb_data_subset <- read_csv("C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Nov11/Data/who_tb_data_subset.csv")
+
+# Create the plot with repelled country names
+plot <- ggplot(who_tb_data_subset, aes(x = country, y = e_inc_100k)) +
+    geom_point() +
+    labs(title = "Einc per 100k by Country", x = "Country", y = "Einc per 100k") +
+    facet_wrap(~g_whoregion)
+
+# Display the plot
+print(plot)
+
+# Save plot 2
+ggsave("tb2.png", plot = plot2)
+
+# Load the dataset
+who_tb_data_subset <- read_csv("C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Nov11/Data/who_tb_data_subset.csv")
+
+# Create the plot
+plot <- ggplot(who_tb_data_subset, aes(x = reorder(country, -e_inc_100k), y = e_inc_100k)) +
+    geom_point() +
+    labs(title = "Einc per 100k by Country", x = "Country", y = "Tb per 100k") +
+    coord_flip() +  # Flip the axes
+    theme(axis.text.y = element_text(size = 2))  # Adjust text size for better readability repell does not work
+
+# Display the plot
+print(plot)
+
+# Save plot 3
+ggsave("tb3.png", plot = plot3)
+```
