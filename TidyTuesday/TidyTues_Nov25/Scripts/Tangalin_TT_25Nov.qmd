@@ -1,0 +1,142 @@
+
+---
+title: "Tangalin_Week_9"
+author: "Natalia Tangalin"
+format: html
+date: today 
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+---
+
+##World Bank has developed Statistical Performance Indicators (SPI) to monitor the statistical performance of countries. The SPI focuses on five key dimensions of a country’s statistical performance: (i) data use, (ii) data services, (iii) data products, (iv) data sources, and (v) data infrastructure.
+
+
+## R Packages wer need
+library(tidytuesday)
+library(tidyverse)
+library(maps)
+library(here)
+library(countrycode)      #standardizing country names try to get rid of grey
+
+
+## Data we need
+#tuesdata <- tidytuesdayR::tt_load('2025-11-25')
+
+
+```{r}
+
+#Load Data
+tuesdata <- tidytuesdayR::tt_load('2025-11-25') # Load the data for the specified TidyTuesday week
+spi_data <- tuesdata$spi_indicators               # Extract the Social Progress Index data frame
+
+
+```
+
+##Social Progress Index (SPI) Overall Score
+
+```{r}
+
+#Clean and Filter for Latest Year and fix country names for mapping
+simple_data <- spi_data %>%                            # Start data pipeline with the full SPI data
+    filter(year == max(year)) %>%                     # Keep only the rows for the most recent year
+    mutate(
+        # STEP 1: Use countrycode to standardize most names avoid grey countries
+        country = countrycode(
+            sourcevar = country,          # Column with the source country name
+            origin = "country.name.en",   # Format of your source names
+            destination = "country.name", # Target: A clean, common English name
+            nomatch = NULL                # Keep the name as is if no match is found
+        ),
+        #initial attempt to remove grey countries
+        country = case_when(                       
+            # Common/Standard Fixes (though most are now handled by countrycode)
+            country == "United States of America" ~ "USA",
+            country == "United Kingdom" ~ "UK",
+            country == "Russian Federation" ~ "Russia",
+            
+            # Specific Fixes (keeping them here for reliability, especially Zaire)
+            country == "Cote d'Ivoire" ~ "Ivory Coast",
+            country == "Yemen, Rep." ~ "Yemen",
+            country == "Venezuela, RB" ~ "Venezuela",
+            country == "Türkiye" ~ "Turkey",
+            country == "Syrian Arab Republic" ~ "Syria",
+            country == "Iran, Islamic Rep." ~ "Iran",
+            country == "Egypt, Arab Rep." ~ "Egypt",
+            
+            # CRITICAL FIX for Democratic Republic of Congo (COD)
+            country == "Democratic Republic of the Congo" ~ "Zaire", #still not working
+            
+            # Other Fixes
+            country == "Republic of the Congo" ~ "Republic of Congo", # Standardized name
+            country == "Korea, Rep." ~ "South Korea", 
+            country == "Korea, Dem. People's Rep." ~ "North Korea",
+            
+            TRUE ~ country                                   # Default: Keep all other names
+        )
+    )
+
+# 3. Join Map Data and Plot the Choropleth Map
+final_map <- map_data("world") %>%                             
+    left_join(simple_data, by = c("region" = "country")) %>% 
+    ggplot(aes(x = long, y = lat, group = group, fill = overall_score)) + 
+    geom_polygon(color = "white", linewidth = 0.1) +  
+    scale_fill_viridis_c(na.value = "grey90",          
+                         name = "SPI Overall Score") + 
+    theme_void() +                                    
+    labs(
+        title = "Global Social Progress Index (SPI) Scores", 
+        subtitle = paste0("Data for ", max(simple_data$year), " (Higher is Better)"), 
+        caption = "Data: World Bank SPI | Visualization: #TidyTuesday" 
+    ) +
+    # ADDED: Theme modifications to set all text elements to white
+    theme(
+        plot.title = element_text(color = "white"),#theme void is dark, can't see
+        plot.subtitle = element_text(color = "white"),
+        plot.caption = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        legend.text = element_text(color = "white")
+    )
+# Save the Map to the Output Folder
+ggsave(
+    filename = here("TidyTuesday", "TidyTues_Nov25", "Output", "spi_world_map.png"), # Saves the file to your [Project Root]/Output folder
+    plot = final_map,                               # Specify the plot object to save
+    width = 12,                                     # Set the width of the saved image in inches
+    height = 6,                                     # Set the height of the saved image in inches
+    dpi = 300                                       # Set high resolution for sharing
+)
+```
+##BAR CHART (Top 15 Countries)
+```{r}
+# Use the simple_data object
+
+simple_data %>%
+  arrange(desc(overall_score)) %>%
+  slice_head(n = 15) %>%
+  ggplot(aes(x = reorder(country, overall_score), y = overall_score, fill = overall_score)) +
+  # Add bars with a border for separation, dot map made no sense
+  geom_col(color = "black", linewidth = 0.5) +
+  # Flip the coordinates for a standard bar chart look
+  coord_flip() +
+  # Use the same viridis color scheme
+  scale_fill_viridis_c(guide = "none") + # Hide the redundant fill legend
+  labs(
+    title = "Top 15 Countries by Social Progress Index (SPI)",
+    subtitle = paste0("Overall Score in ", max(simple_data$year)),
+    x = NULL, # Remove the x-axis label (country name is enough)
+    y = "SPI Overall Score",
+    caption = "Data: World Bank SPI | Visualization: #TidyTuesday"
+  ) +
+  # Customize the theme for a clean look
+  theme_minimal()
+
+# Save the Bar Chart
+ggsave(
+    filename = here("TidyTuesday", "TidyTues_Nov25", "Output", "spi_top15_bar_chart.png"),
+    plot = final_bar_chart,
+    width = 10,
+    height = 7,
+    dpi = 300
+)
+```
