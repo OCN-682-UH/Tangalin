@@ -1,6 +1,6 @@
 
 ---
-title: "Tangalin_Week_9"
+title: "Tangalin_Week_13"
 author: "Natalia Tangalin"
 format: html
 date: today 
@@ -14,7 +14,8 @@ knitr:
 
 
 ## R Packages wer need
-library(tidytuesday)
+```{r}
+library(tidytuesdayR)
 library(tidyverse)
 library(maps)
 library(here)
@@ -23,9 +24,6 @@ library(countrycode)      #standardizing country names try to get rid of grey
 
 ## Data we need
 #tuesdata <- tidytuesdayR::tt_load('2025-11-25')
-
-
-```{r}
 
 #Load Data
 tuesdata <- tidytuesdayR::tt_load('2025-11-25') # Load the data for the specified TidyTuesday week
@@ -64,8 +62,6 @@ simple_data <- spi_data %>%                            # Start data pipeline wit
             country == "Syrian Arab Republic" ~ "Syria",
             country == "Iran, Islamic Rep." ~ "Iran",
             country == "Egypt, Arab Rep." ~ "Egypt",
-            
-            # CRITICAL FIX for Democratic Republic of Congo (COD)
             country == "Democratic Republic of the Congo" ~ "Zaire", #still not working
             
             # Other Fixes
@@ -77,7 +73,7 @@ simple_data <- spi_data %>%                            # Start data pipeline wit
         )
     )
 
-# 3. Join Map Data and Plot the Choropleth Map
+# Join Map Data and Plot the Choropleth Map
 final_map <- map_data("world") %>%                             
     left_join(simple_data, by = c("region" = "country")) %>% 
     ggplot(aes(x = long, y = lat, group = group, fill = overall_score)) + 
@@ -98,43 +94,51 @@ final_map <- map_data("world") %>%
         legend.title = element_text(color = "white"),
         legend.text = element_text(color = "white")
     )
+```
 # Save the Map to the Output Folder
+```{r}
+# Print the plot to the Quarto document output
+final_map 
+
+# 5. Save the Map to the Output Folder
 ggsave(
-    filename = here("TidyTuesday", "TidyTues_Nov25", "Output", "spi_world_map.png"), # Saves the file to your [Project Root]/Output folder
-    plot = final_map,                               # Specify the plot object to save
-    width = 12,                                     # Set the width of the saved image in inches
-    height = 6,                                     # Set the height of the saved image in inches
-    dpi = 300                                       # Set high resolution for sharing
+    filename = here("TidyTuesday", "TidyTues_Nov25", "Output", "spi_world_map.png"), 
+    plot = final_map,
+    width = 12,
+    height = 6,
+    dpi = 300
 )
 ```
 ##BAR CHART (Top 15 Countries)
 ```{r}
 # Use the simple_data object
+# Create the plot object and assign it to final_bar_chart
+final_bar_chart <- ggplot(
+    arrange(
+        slice_head(simple_data, n = 15), 
+        desc(overall_score)
+    ),
+    aes(x = reorder(country, overall_score), y = overall_score, fill = overall_score)
+) +
+    geom_col(color = "black", linewidth = 0.5) +
+    coord_flip() +
+    scale_fill_viridis_c(guide = "none") + 
+    labs(
+        title = "Top 15 Countries by Social Progress Index (SPI)",
+        subtitle = paste0("Overall Score in ", max(simple_data$year)),
+        x = NULL, 
+        y = "SPI Overall Score",
+        caption = "Data: World Bank SPI | Visualization: #TidyTuesday"
+    ) +
+    theme_minimal()
 
-simple_data %>%
-  arrange(desc(overall_score)) %>%
-  slice_head(n = 15) %>%
-  ggplot(aes(x = reorder(country, overall_score), y = overall_score, fill = overall_score)) +
-  # Add bars with a border for separation, dot map made no sense
-  geom_col(color = "black", linewidth = 0.5) +
-  # Flip the coordinates for a standard bar chart look
-  coord_flip() +
-  # Use the same viridis color scheme
-  scale_fill_viridis_c(guide = "none") + # Hide the redundant fill legend
-  labs(
-    title = "Top 15 Countries by Social Progress Index (SPI)",
-    subtitle = paste0("Overall Score in ", max(simple_data$year)),
-    x = NULL, # Remove the x-axis label (country name is enough)
-    y = "SPI Overall Score",
-    caption = "Data: World Bank SPI | Visualization: #TidyTuesday"
-  ) +
-  # Customize the theme for a clean look
-  theme_minimal()
+# Print the plot to the Quarto document output
+final_bar_chart
 
-# Save the Bar Chart
+#Save the Bar Chart immediately after creation
 ggsave(
     filename = here("TidyTuesday", "TidyTues_Nov25", "Output", "spi_top15_bar_chart.png"),
-    plot = final_bar_chart,
+    plot = final_bar_chart, # <-- This variable is now guaranteed to exist
     width = 10,
     height = 7,
     dpi = 300
