@@ -1,0 +1,86 @@
+---
+title: "Tangalin_Week_13"
+author: "Natalia Tangalin"
+format: html
+date: today 
+knitr:                    
+  opts_chunk: 
+    message: false
+    warning: false
+---
+
+```{r}
+library(tidyverse) # Loads dplyr and readr
+library(here)      
+
+# --- 1. Setup and File Identification (Local Optimization) ---
+
+# Define path
+DataPath <- here("Week_13", "Data", "data2") 
+
+# Get the full file paths
+files_local_path <- dir(path = DataPath, pattern = "\\.csv$", full.names = TRUE)
+n_files <- length(files_local_path)
+
+# FOR LOOP (Procedural Approach
+
+# Pre-allocate space for the results tibble 
+results_for_loop <- tibble(
+  filename = rep(NA_character_, n_files),
+  mean_temp = rep(NA_real_, n_files),   # Mean Temperature column
+  sd_temp = rep(NA_real_, n_files),     # Standard Deviation Temperature column
+  mean_light = rep(NA_real_, n_files),  # Mean Light column
+  sd_light = rep(NA_real_, n_files)     # Standard Deviation Light column
+)
+
+# Loop over the number of files
+for (i in 1:n_files) {
+  # The file_path is already the full local path
+  file_path <- files_local_path[i]
+  
+  # Read the data 
+  raw_data <- read_csv(file_path, show_col_types = FALSE)
+  
+  # Calculate stats for Temp.C and Intensity.lux
+  mean_t <- mean(raw_data$Temp.C, na.rm = TRUE)
+  sd_t <- sd(raw_data$Temp.C, na.rm = TRUE)
+  mean_l <- mean(raw_data$Intensity.lux, na.rm = TRUE)
+  sd_l <- sd(raw_data$Intensity.lux, na.rm = TRUE)
+  
+  # Store the results,extract the simple filename for output
+  results_for_loop$filename[i] <- basename(file_path) 
+  results_for_loop$mean_temp[i] <- mean_t
+  results_for_loop$sd_temp[i] <- sd_t
+  results_for_loop$mean_light[i] <- mean_l
+  results_for_loop$sd_light[i] <- sd_l
+}
+
+# Display the final results from the for loop
+print("--- Results using the FOR LOOP (Procedural Approach) ---")
+print(results_for_loop)
+cat("\n") 
+
+
+# Solution using map() functions (Functional Approach)
+
+# Use the full local file paths as input for map_dfr
+# The .id argument uses full path in the 'filename' column
+results_map <- files_local_path %>%
+    # set_names uses the full path, but map_dfr will use
+    map_dfr(read_csv, .id = "filename", show_col_types = FALSE) %>% 
+    group_by(filename) %>%
+    summarise(
+        # Calculate mean and standard deviation for both variables
+        mean_temp = mean(Temp.C, na.rm = TRUE),
+        sd_temp = sd(Temp.C, na.rm = TRUE),
+        mean_light = mean(Intensity.lux, na.rm = TRUE),
+        sd_light = sd(Intensity.lux, na.rm = TRUE),
+        .groups = 'drop'
+    ) %>%
+    # Clean up the filename column
+    mutate(filename = basename(filename))
+
+# Display the final results from the map function
+print("Results using the MAP FUNCTION (Functional Approach)")
+print(results_map)
+```
