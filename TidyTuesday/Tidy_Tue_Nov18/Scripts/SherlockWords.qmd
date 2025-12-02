@@ -1,0 +1,61 @@
+---
+title: "Sherlock"
+author: "Tangalin"
+format: html
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like th
+```{r}
+library(tidyverse)
+library(tidytext)
+library(wordcloud2)
+library(stringr)
+library(here)
+
+# GetSherlock Holmes data
+holmes_data <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-11-18/holmes.csv", show_col_types = FALSE)
+
+#Data Cleaning and Tokenization
+# Text analysis requires breaking the text into individual words (tokens).
+holmes_word_counts <- holmes_data %>%
+  # Filter out NA text lines (blank lines)
+  filter(!is.na(text)) %>%
+  # Convert text column to individual words (tokenization)
+  unnest_tokens(word, text) %>%
+  # Remove standard English stop words (e.g., "the", "a", "of")
+  anti_join(stop_words, by = "word") %>%
+  # Remove common Sherlocks-specific words that don't add meaning (e.g., names, titles)
+  filter(!word %in% c("sherlock", "holmes", "watson", "mr", "mrs", "said", "shall", "upon", "can", "may", "will", "sir")) %>%
+  # Count the frequency of each unique word
+  count(word, sort = TRUE) %>%
+  # Rename columns to match the required input for wordcloud2 (word and freq)
+  rename(freq = n)
+
+#Generate and Show the Interactive Word cloud
+
+# Use the top 500 words for visualization.
+top_holmes_words <- holmes_word_counts %>%
+  slice_head(n = 500)
+
+# make the word cloud 
+holmes_cloud <- wordcloud2(
+  data = top_holmes_words,
+  size = 0.5,           # Controls the size of the smallest words
+  minSize = 0,          # Minimum font size
+  fontFamily = 'Helvetica',
+  color = 'random-dark', # Use a random color scheme
+  backgroundColor = "white",
+  shape = 'circle'      # Optional: Change the shape of the cloud
+)
+
+# Display the word cloud 
+holmes_cloud
+```
+
+
