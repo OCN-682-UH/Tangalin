@@ -1,0 +1,136 @@
+---
+title: "TidyTue_Dec02"
+author: "Natalia Tangalin"
+date: "2025-12-02"
+format: html
+execute:
+  message: false
+  warning: false
+---
+
+## What we need
+
+```{r}
+#| label: setup
+
+# Libraries we need:
+# tidyverse - data wrangling and ggplot2 for plots
+# tidytuesdayR - downloads TidyTuesday datasets
+library(tidyverse)
+library(tidytuesdayR)
+
+# Xmas colors for festive plots
+xmas_red <- "#C41E3A"
+xmas_green <- "#228B22"
+xmas_gold <- "#FFD700"
+
+# Define folder paths here not working
+data_path <- "C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Dec02/Data"
+output_path <- "C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Dec02/Output"
+
+# Load data using tidytuesdayR package
+tuesdata <- tt_load('2025-12-02')
+sechselaeuten <- tuesdata$sechselaeuten
+
+# Save copy to Data folder
+write_csv(sechselaeuten, file.path(data_path, "sechselaeuten_raw.csv"))
+```
+
+## Data Dictionary from TidyTuesday page
+
+| Variable | Description |
+|----------|-------------|
+| year | Year of Sechselauten festival |
+| duration | Time from ignition until explosion (minutes) |
+| tre200m0 | Avg summer air temp at 2m (°C) |
+| tre200mn | Min summer air temp at 2m (°C) |
+| tre200mx | Max summer air temp at 2m (°C) |
+| sre000m0 | Total sunshine duration (hours) |
+| sremaxmv | Sunshine as % of possible maximum |
+| rre150m0 | Total precipitation (mm) |
+| record | TRUE if avg summer temp ≥ 19°C |
+
+## Exploratory Plot
+
+```{r}
+#| label: explore
+
+# Quick look at the data
+glimpse(sechselaeuten)
+
+# Plot burn duration over time to see trends
+p_explore <- sechselaeuten |>
+  ggplot(aes(x = year, y = duration)) + # year on x, burn time on y
+  geom_line(color = xmas_green, linewidth = 0.8) + # connect years with line
+  geom_point(aes(color = record), size = 3) + # color dots by record heat years
+  scale_color_manual(values = c("FALSE" = xmas_green, "TRUE" = xmas_red), # custom colors
+                     labels = c("Normal", "Record Heat (≥19°C)"), # legend labels
+                     na.value = "grey50") + # grey for missing data
+  labs(title = "Böögg Burn Duration Over Time",
+       subtitle = "Red dots = record hot summers (avg temp ≥ 19°C)",
+       x = "Year", y = "Burn Duration (min)", color = "Summer") +
+  theme_minimal()
+
+p_explore
+ggsave(file.path(output_path, "plot_explore.png"), p_explore, width = 10, height = 5)
+```
+
+## Q1: Burn Duration vs Summer Temperature
+
+Does folk wisdom hold?  Legend says shorter burn = warmer summer. 
+
+```{r}
+#| label: burn-vs-temp
+
+# Keep only rows with both duration and temp (remove NAs)
+df <- sechselaeuten |>
+  filter(! is.na(duration), !is.na(tre200m0))
+
+# Scatter plot with trend line
+p1 <- df |>
+  ggplot(aes(x = duration, y = tre200m0)) + # burn time vs avg summer temp
+  geom_point(color = xmas_red, size = 3) + # red dots for each year
+  geom_smooth(method = "lm", color = xmas_green, fill = xmas_gold, alpha = 0.3) + # trend line
+  labs(title = "Böögg Burn Time vs Average Summer Temperature",
+       subtitle = "Folk wisdom: shorter burn = warmer summer",
+       x = "Burn Duration (min)", y = "Avg Summer Temp (°C)") +
+  theme_minimal()
+
+p1
+ggsave(file.path(output_path, "plot_burn_vs_temp.png"), p1, width = 8, height = 5)
+
+# Correlation test - checks if relationship is statistically significant
+cor_test <- cor.test(df$duration, df$tre200m0)
+cor_test
+```
+
+**Finding:** The relationship isn't statistically significant
+
+## Q2: Missing Duration Years
+
+What happened when there was no burn recorded? 
+
+```{r}
+#| label: missing
+
+# Find years with missing burn duration
+missing_years <- sechselaeuten |>
+  filter(is.na(duration))
+
+missing_years
+write_csv(missing_years, file.path(data_path, "missing_years.csv"))
+```
+
+**Finding:** There are `r nrow(missing_years)` years with no burn duration: `r paste(missing_years$year, collapse = ", ")`. 
+
+According to the Sechseläuten Wikipedia page events were cancelled for various reasons:
+
+- **1914-1918**: World War I
+- **1940-1945**: World War II
+- **2020**: COVID-19 pandemic
+- **Other years**: Bad weather, political unrest, or other disruptions
+
+
+## Conclusion
+
+Does the Böögg predict summer weather?  Based on our analysis: No
