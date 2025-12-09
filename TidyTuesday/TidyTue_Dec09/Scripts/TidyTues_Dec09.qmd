@@ -1,0 +1,140 @@
+---
+title: "TidyTue_Dec09"
+author: "Tangalin"
+format: html
+---
+## Setup
+
+```{r}
+# Load tidyverse
+library(tidyverse)
+```
+
+## Load Data
+
+```{r}
+# Load Qatar cars data
+qatarcars <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-12-09/qatarcars.csv')
+
+# Check the data
+head(qatarcars)
+```
+
+## Camel Facts
+
+A camel drinks about 100 liters of water and can travel 160 km in the desert.  A regular camel costs about 30,000 QAR in Qatar.  Qatar is 160 km long - perfect for a camel!
+
+## Plot 1: How Many Camels Could You Buy Instead? 
+
+```{r}
+# Camel price in QAR
+camel_price <- 30000
+
+# Calculate camels per car and plot
+plot1 <- qatarcars %>%
+  mutate(camels_instead = price / camel_price) %>%  # how many camels for this car
+  arrange(desc(camels_instead)) %>%  # sort by most camels
+  head(20) %>%  # top 20
+  ggplot(aes(x = reorder(paste(make, model), camels_instead), y = camels_instead)) +
+  geom_col(fill = "sandybrown") +  # camel colored
+  geom_text(aes(label = round(camels_instead, 1)), hjust = -0.1, size = 3) +  # show number
+  coord_flip() +  # flip for readability
+  labs(
+    title = "How Many Camels Could You Buy Instead?",
+    subtitle = "Based on camel price of 30,000 QAR",
+    x = NULL,
+    y = "Number of Camels"
+  ) +
+  theme_minimal()
+
+# Show plot
+print(plot1)
+```
+
+## Plot 2: 100 Liters - How Far Down the Road?
+
+```{r}
+# Find best and worst fuel economy cars
+best_car <- qatarcars %>% 
+  filter(enginetype == "Petrol") %>%
+  filter(economy == min(economy, na.rm = TRUE)) %>%  # lowest L/100km = most efficient
+
+  head(1)
+
+worst_car <- qatarcars %>% 
+  filter(enginetype == "Petrol") %>%
+  filter(economy == max(economy, na.rm = TRUE)) %>%  # highest L/100km = least efficient
+  head(1)
+
+# Calculate distance on 100 liters
+# distance = (100 / economy) * 100
+race_data <- tibble(
+  vehicle = c("Camel", 
+              paste(best_car$make, best_car$model), 
+              paste(worst_car$make, worst_car$model)),
+  distance = c(160, 
+               (100 / best_car$economy) * 100, 
+               (100 / worst_car$economy) * 100),
+  y = c(3, 2, 1)  # vertical position for each road
+)
+
+# Road path plot
+plot2 <- ggplot(race_data) +
+  # Draw the roads (gray background)
+  geom_segment(aes(x = 0, xend = max(distance) + 100, y = y, yend = y), 
+               color = "gray80", linewidth = 8) +
+  # Draw how far each vehicle went (colored path)
+  geom_segment(aes(x = 0, xend = distance, y = y, yend = y, color = vehicle), 
+               linewidth = 6) +
+  # Add dot at end position
+  geom_point(aes(x = distance, y = y, color = vehicle), size = 8) +
+  # Add distance labels
+  geom_text(aes(x = distance + 50, y = y, label = paste(round(distance), "km")), 
+            size = 5, hjust = 0) +
+  # Add vehicle labels on left
+  geom_text(aes(x = -50, y = y, label = vehicle), size = 4, hjust = 1) +
+  # Colors
+  scale_color_manual(values = c("Camel" = "sandybrown", 
+                                setNames("darkgreen", paste(best_car$make, best_car$model)),
+                                setNames("darkred", paste(worst_car$make, worst_car$model)))) +
+  # Labels
+  labs(
+    title = "100 Liters - How Far Down the Road?",
+    subtitle = "Camel uses water.   Cars use petrol.   Who goes furthest?",
+    x = "Distance (km)",
+    y = NULL
+  ) +
+  # Clean theme
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank()
+  ) +
+  xlim(-300, max(race_data$distance) + 200)
+
+# Show plot
+print(plot2)
+```
+
+## Summary
+
+```{r}
+# Show the results
+race_data %>%
+  select(vehicle, distance) %>%
+  arrange(desc(distance))
+```
+
+## Save Plots
+
+```{r}
+# Save plots to Output folder
+ggsave("C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Dec09/Output/plot1_camels_instead.png", 
+       plot = plot1, width = 10, height = 8)
+
+ggsave("C:/Users/Ainacology/OneDrive/Desktop/Repositories/Tangalin/TidyTuesday/TidyTue_Dec09/Output/plot2_road_race.png", 
+       plot = plot2, width = 12, height = 5)
+```
